@@ -125,8 +125,8 @@
 
 
                         <div class="text-center">
-                            <p>By purchasing any product, you agree that you are fully aware of these
-                                terms/conditions and agree to follow them! 👉🏽<a href="/user/rules"> TERMS AND
+                          <p>By purchasing any product, you agree that you are fully aware of these
+                                terms/conditions and agree to follow them! 👉🏽<a href="#" data-bs-toggle="modal" data-bs-target="#TermsModal"> TERMS AND
                                     CONDITIONS</a></p>
 
                         </div>
@@ -137,11 +137,41 @@
 
 
 
+                <button type="button" class="btn btn--danger btn--gradi btn--shadow w-100 btn-lg userStatus" >
+                    <i class="las la-wallet"></i>@lang('Remove Fund')
+                </button>
+
+
+                <div id="TermsModal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">
+                                 Terms and Condition
+                                </h5>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <i class="las la-times"></i>
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p class="text-center">
+                                    Don’t use our product to harm other people , bullying on social networks, comment spam, threats, etc and to commit other illegal actions – fraud, extortion, data theft, etc.
+                                    <br/><br/>We do not support scam/fraud activities, so <span class="text-danger">DO NOT USE OUR PRODUCTS FOR ILLEGAL ACTIVITIES .</span>
+                                </p>
+                            </div>
 
 
 
 
-                    <div class="container">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="container">
 
 
                         @if($product->in_stock > 0)
