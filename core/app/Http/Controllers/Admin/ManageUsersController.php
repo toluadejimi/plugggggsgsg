@@ -56,6 +56,45 @@ class ManageUsersController extends Controller
         return view('admin.users.list', compact('pageTitle', 'users'));
     }
 
+    public function addbalance(Request $request,$id)
+    {
+
+        User::where('id', $id)->increment('balance', $request->amount);
+
+        $usr= User::where('id', $id)->first();
+        $amount = number_format($request->amount);
+        $message = "LOGMAEKET PLACE | Admin has funded | $usr->email | NGN $amount |";
+
+        send_notification2($message);
+
+
+        $notify[] = ['success','User Funded successfully'];
+        return back()->withNotify($notify);
+
+
+    }
+
+
+    public function removebalance(Request $request,$id)
+    {
+
+        User::where('id', $id)->decrement('balance', $request->amount);
+
+        $usr= User::where('id', $id)->first();
+        $amount = number_format($request->amount);
+        $message = "LOGMAEKET PLACE | Admin has removed | $usr->email | NGN $amount |";
+
+        send_notification2($message);
+
+
+
+        $notify[] = ['success','User Funds removed successfully'];
+        return back()->withNotify($notify);
+
+
+    }
+
+
     public function emailVerifiedUsers()
     {
         $pageTitle = 'Email Verified Users';
@@ -81,10 +120,10 @@ class ManageUsersController extends Controller
 
     protected function userData($scope = null){
         if ($scope) {
-            $users = User::$scope(); 
+            $users = User::$scope();
         }else{
             $users = User::query();
-        } 
+        }
         return $users->searchable(['username','email'])->orderBy('id','desc')->paginate(getPaginate());
     }
 
@@ -123,7 +162,7 @@ class ManageUsersController extends Controller
         $user->firstname = $request->firstname;
         $user->lastname = $request->lastname;
         $user->email = $request->email;
-        $user->address = [ 
+        $user->address = [
                             'address' => $request->address,
                             'city' => $request->city,
                             'state' => $request->state,
