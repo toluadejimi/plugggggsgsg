@@ -137,11 +137,6 @@
 
 
 
-                <button type="button" class="btn btn--danger btn--gradi btn--shadow w-100 btn-lg userStatus" >
-                    <i class="las la-wallet"></i>@lang('Remove Fund')
-                </button>
-
-
                 <div id="TermsModal" class="modal fade" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
