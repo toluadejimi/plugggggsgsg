@@ -88,6 +88,7 @@ class ManageUsersController extends Controller
 
 
 
+
         $notify[] = ['success','User Funds removed successfully'];
         return back()->withNotify($notify);
 
