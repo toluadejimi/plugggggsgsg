@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2cfd0884-5059-4ef3-b2fd-ec5a1ead117c" name="Changes" comment="remove fund added" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/core/composer.json" />
+    </option>
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/local/Cellar/php/8.3.2/bin/php">
+    <include_path>
+      <path value="$PROJECT_DIR$/core/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/core/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/core/vendor/jorenvanhocht/laravel-share" />
+      <path value="$PROJECT_DIR$/core/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/core/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/core/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/core/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/core/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/core/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/core/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/core/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/core/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/core/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/core/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/core/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/core/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/core/vendor/vonage/nexmo-bridge" />
+      <path value="$PROJECT_DIR$/core/vendor/mollie/mollie-api-php" />
+      <path value="$PROJECT_DIR$/core/vendor/vonage/client-core" />
+      <path value="$PROJECT_DIR$/core/vendor/messagebird/php-rest-api" />
+      <path value="$PROJECT_DIR$/core/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/core/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/core/vendor/mollie/laravel-mollie" />
+      <path value="$PROJECT_DIR$/core/vendor/vonage/client" />
+      <path value="$PROJECT_DIR$/core/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/core/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/core/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/core/vendor/laramin/utility" />
+      <path value="$PROJECT_DIR$/core/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/core/vendor/btcpayserver/btcpayserver-greenfield-php" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/core/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/core/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/core/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/core/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/core/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/core/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/core/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/core/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/core/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/core/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/core/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/core/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/core/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/core/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/core/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/core/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/core/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/core/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/core/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/core/vendor/beyondcode/laravel-query-detector" />
+      <path value="$PROJECT_DIR$/core/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/core/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/core/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/core/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/core/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/core/vendor/sendgrid/php-http-client" />
+      <path value="$PROJECT_DIR$/core/vendor/textmagic/sdk" />
+      <path value="$PROJECT_DIR$/core/vendor/sendgrid/sendgrid" />
+      <path value="$PROJECT_DIR$/core/vendor/twilio/sdk" />
+      <path value="$PROJECT_DIR$/core/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/core/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/core/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/core/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/core/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/core/vendor/mailjet/mailjet-apiv3-php" />
+      <path value="$PROJECT_DIR$/core/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/core/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/core/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/core/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/core/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/core/vendor/spatie/ignition" />
+      <path value="$PROJECT_DIR$/core/vendor/league/config" />
+      <path value="$PROJECT_DIR$/core/vendor/starkbank/ecdsa" />
+      <path value="$PROJECT_DIR$/core/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/core/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/core/vendor/spatie/backtrace" />
+      <path value="$PROJECT_DIR$/core/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/core/vendor/authorizenet/authorizenet" />
+      <path value="$PROJECT_DIR$/core/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/core/vendor/spatie/flare-client-php" />
+      <path value="$PROJECT_DIR$/core/vendor/spatie/laravel-ignition" />
+      <path value="$PROJECT_DIR$/core/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/core/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/core/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/core/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/core/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/core/vendor/composer" />
+      <path value="$PROJECT_DIR$/core/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/core/vendor/stripe/stripe-php" />
+      <path value="$PROJECT_DIR$/core/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/core/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/core/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/core/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/core/vendor/silviolleite/laravelpwa" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/core/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/core/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/core/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/core/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/core/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/core/vendor/coingate/coingate-php" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/core/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/core/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/core/vendor/razorpay/razorpay" />
+      <path value="$PROJECT_DIR$/core/vendor/rmccue/requests" />
+      <path value="$PROJECT_DIR$/core/vendor/dragonmantank/cron-expression" />
+    </include_path>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2ezfiqE7RVx4LutZ7VXpTWicywB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Applications/XAMPP/xamppfiles/htdocs/project/loggsplug/core/resources/views/templates/basic/user&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core/resources/views/templates/basic/user" />
+      <recent name="$PROJECT_DIR$/assets/assets2/images/icons" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.Main">
+    <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/core/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="core" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/core/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2cfd0884-5059-4ef3-b2fd-ec5a1ead117c" name="Changes" comment="" />
+      <created>1712912456884</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712912456884</updated>
+      <workItem from="1712912458334" duration="11833000" />
+      <workItem from="1713028595874" duration="23100000" />
+      <workItem from="1713651711393" duration="8532000" />
+      <workItem from="1713934084702" duration="1166000" />
+      <workItem from="1713978803764" duration="363000" />
+      <workItem from="1714222248094" duration="34000" />
+      <workItem from="1714222316361" duration="3240000" />
+      <workItem from="1714304611882" duration="26000" />
+      <workItem from="1714469238390" duration="5838000" />
+      <workItem from="1714643249702" duration="75000" />
+    </task>
+    <task id="LOCAL-00001" summary="Register Added">
+      <option name="closed" value="true" />
+      <created>1712916354145</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712916354146</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Register Added">
+      <option name="closed" value="true" />
+      <created>1712916780389</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712916780389</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Register Added">
+      <option name="closed" value="true" />
+      <created>1712917357887</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712917357887</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Register Added">
+      <option name="closed" value="true" />
+      <created>1712919008565</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712919008565</updated>
+    </task>
+    <task id="LOCAL-00005" summary="jssss">
+      <option name="closed" value="true" />
+      <created>1712919048850</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712919048850</updated>
+    </task>
+    <task id="LOCAL-00006" summary="jssss">
+      <option name="closed" value="true" />
+      <created>1712920697721</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712920697722</updated>
+    </task>
+    <task id="LOCAL-00007" summary="telegram added">
+      <option name="closed" value="true" />
+      <created>1712922740684</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712922740684</updated>
+    </task>
+    <task id="LOCAL-00008" summary="telegram added">
+      <option name="closed" value="true" />
+      <created>1712922810206</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712922810206</updated>
+    </task>
+    <task id="LOCAL-00009" summary="telegram added">
+      <option name="closed" value="true" />
+      <created>1712923712382</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712923712382</updated>
+    </task>
+    <task id="LOCAL-00010" summary="telegram added">
+      <option name="closed" value="true" />
+      <created>1712925363194</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712925363194</updated>
+    </task>
+    <task id="LOCAL-00011" summary="telegram added">
+      <option name="closed" value="true" />
+      <created>1712959962498</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712959962498</updated>
+    </task>
+    <task id="LOCAL-00012" summary="telegram added">
+      <option name="closed" value="true" />
+      <created>1712960724628</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712960724628</updated>
+    </task>
+    <task id="LOCAL-00013" summary="telegram added">
+      <option name="closed" value="true" />
+      <created>1712997792251</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1712997792251</updated>
+    </task>
+    <task id="LOCAL-00014" summary="telegram added">
+      <option name="closed" value="true" />
+      <created>1713209983636</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1713209983636</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Git items corrected">
+      <option name="closed" value="true" />
+      <created>1713210204122</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1713210204122</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Git items corrected">
+      <option name="closed" value="true" />
+      <created>1713210600404</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1713210600404</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Git items corrected">
+      <option name="closed" value="true" />
+      <created>1713211009879</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1713211009879</updated>
+    </task>
+    <task id="LOCAL-00018" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713217179797</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1713217179797</updated>
+    </task>
+    <task id="LOCAL-00019" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713217276948</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1713217276948</updated>
+    </task>
+    <task id="LOCAL-00020" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713217384434</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1713217384434</updated>
+    </task>
+    <task id="LOCAL-00021" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713218011970</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1713218011970</updated>
+    </task>
+    <task id="LOCAL-00022" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713249040965</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1713249040967</updated>
+    </task>
+    <task id="LOCAL-00023" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713670237011</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1713670237011</updated>
+    </task>
+    <task id="LOCAL-00024" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713670321660</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1713670321660</updated>
+    </task>
+    <task id="LOCAL-00025" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713670387763</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1713670387763</updated>
+    </task>
+    <task id="LOCAL-00026" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713670466652</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1713670466652</updated>
+    </task>
+    <task id="LOCAL-00027" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713671460084</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1713671460084</updated>
+    </task>
+    <task id="LOCAL-00028" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713671750485</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1713671750485</updated>
+    </task>
+    <task id="LOCAL-00029" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713934287967</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1713934287967</updated>
+    </task>
+    <task id="LOCAL-00030" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713934548678</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1713934548678</updated>
+    </task>
+    <task id="LOCAL-00031" summary="rules added">
+      <option name="closed" value="true" />
+      <created>1713935070780</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1713935070780</updated>
+    </task>
+    <task id="LOCAL-00032" summary="hgggg">
+      <option name="closed" value="true" />
+      <created>1714224157417</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1714224157417</updated>
+    </task>
+    <task id="LOCAL-00033" summary="hgggg">
+      <option name="closed" value="true" />
+      <created>1714224873811</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1714224873811</updated>
+    </task>
+    <task id="LOCAL-00034" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1714469521357</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1714469521357</updated>
+    </task>
+    <task id="LOCAL-00035" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1714469682530</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1714469682530</updated>
+    </task>
+    <task id="LOCAL-00036" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1714516639852</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1714516639852</updated>
+    </task>
+    <task id="LOCAL-00037" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1714516971224</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1714516971224</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Register Added" />
+    <MESSAGE value="jssss" />
+    <MESSAGE value="telegram added" />
+    <MESSAGE value="Git items corrected" />
+    <MESSAGE value="rules added" />
+    <MESSAGE value="hgggg" />
+    <MESSAGE value="remove fund added" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove fund added" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/resources/views/templates/basic/user/rules.blade.php</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/resources/views/templates/basic/user/auth/register.blade.php</url>
+          <line>188</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
