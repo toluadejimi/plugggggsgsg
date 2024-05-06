@@ -1,3 +1,10 @@
+
+<?php if($general->secure_password): ?>
+    <?php $__env->startPush('script-lib'); ?>
+        <script src="<?php echo e(asset('assets/global/js/secure_password.js')); ?>"></script>
+    <?php $__env->stopPush(); ?>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -163,66 +170,34 @@
             <a href="/" class="logo mb-64">
                 <img src="<?php echo e(url('')); ?>/assets/assets2/images/slider/img.png" alt="Logo">
             </a>
-            <h4 class="account-content__title mb-48 text-capitalize">Welcome Back!</h4>
+            <h4 class="account-content__title mb-48 text-capitalize">Reset Password</h4>
 
 
-            <div class="card">
+            <div class="card custom--card">
                 <div class="card-body">
-
-                    <?php if($errors->any()): ?>
-                        <div class="alert alert-danger">
-                            <ul>
-                                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <li><?php echo e($error); ?></li>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </ul>
-                        </div>
-                    <?php endif; ?>
-                    <?php if(session()->has('message')): ?>
-                        <div class="alert alert-success">
-                            <?php echo e(session()->get('message')); ?>
-
-                        </div>
-                    <?php endif; ?>
-                    <?php if(session()->has('error')): ?>
-                        <div class="alert alert-danger">
-                            <?php echo e(session()->get('error')); ?>
-
-                        </div>
-                    <?php endif; ?>
                     <div class="mb-4">
-                        <p><?php echo app('translator')->get('To recover your account please provide your email or username to find your account.'); ?></p>
+                        <p><?php echo app('translator')->get('Your account is verified successfully. Now you can change your password. Please enter a strong password and don\'t share it with anyone.'); ?></p>
                     </div>
-                    <form method="POST" action="<?php echo e(route('user.password.email')); ?>" class="verify-gcaptcha">
+                    <form method="POST" action="<?php echo e(route('user.password.update')); ?>">
                         <?php echo csrf_field(); ?>
+                        <input type="hidden" name="email" value="<?php echo e($email); ?>">
+                        <input type="hidden" name="token" value="<?php echo e($token); ?>">
                         <div class="form-group">
-                            <label class="my-3"><?php echo app('translator')->get('Email or Username'); ?></label>
-                            <input type="text" class="form-control" name="value" value="<?php echo e(old('value')); ?>"
-                                   required autofocus="off">
+                            <label class="my-2"><?php echo app('translator')->get('Password'); ?></label>
+                            <div class="form-group">
+                                <input type="password"
+                                       class="form-control <?php if($general->secure_password): ?> secure-password <?php endif; ?>"
+                                       name="password" required>
+                            </div>
                         </div>
-
-                        <?php if (isset($component)) { $__componentOriginalc0af13564821b3ac3d38dfa77d6cac9157db8243 = $component; } ?>
-<?php $component = App\View\Components\Captcha::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('captcha'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\View\Components\Captcha::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc0af13564821b3ac3d38dfa77d6cac9157db8243)): ?>
-<?php $component = $__componentOriginalc0af13564821b3ac3d38dfa77d6cac9157db8243; ?>
-<?php unset($__componentOriginalc0af13564821b3ac3d38dfa77d6cac9157db8243); ?>
-<?php endif; ?>
-
-                        <div class="my-3">
-                            <button type="submit" class="btn btn-main btn-lg w-100 pill p-3"><?php echo app('translator')->get('Submit'); ?></button>
+                        <div class="form-group">
+                            <label class="my-2"><?php echo app('translator')->get('Confirm Password'); ?></label>
+                            <input type="password" class="form-control" name="password_confirmation" required>
+                        </div>
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-main btn-lg w-100 pill p-3"><?php echo app('translator')->get('Reset'); ?></button>
                         </div>
                     </form>
-
-
                 </div>
             </div>
 
@@ -252,5 +227,4 @@
 </body>
 </html>
 
-
-<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/project/loggsplug/core/resources/views/templates/basic/user/auth/passwords/email.blade.php ENDPATH**/ ?>
+<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/project/loggsplug/core/resources/views/templates/basic/user/auth/passwords/reset.blade.php ENDPATH**/ ?>

@@ -26,9 +26,6 @@ class PaymentController extends Controller
 
 
         if($request->payment == "wallet"){
-
-
-
             $qty = $request->qty;
 
             $product = Product::active()->whereHas('category', function($category){

@@ -34,7 +34,6 @@ class ResetPasswordController extends Controller
 
     public function reset(Request $request)
     {
-        $request->validate($this->rules());
         $reset = PasswordReset::where('token', $request->token)->orderBy('created_at', 'desc')->first();
         if (!$reset) {
             $notify[] = ['error', 'Invalid verification code'];
@@ -57,22 +56,22 @@ class ResetPasswordController extends Controller
         ],['email']);
 
 
-        $notify[] = ['success', 'Password changed successfully'];
-        return to_route('user.login')->withNotify($notify);
+        $notify = "Password changed successfully";
+        return to_route('user.login')->with($notify);
     }
 
 
-    protected function rules()
-    {
-        $passwordValidation = Password::min(6);
-        if (gs('secure_password')) {
-            $passwordValidation = $passwordValidation->mixedCase()->numbers()->symbols()->uncompromised();
-        }
-        return [
-            'token' => 'required',
-            'email' => 'required|email',
-            'password' => ['required','confirmed',$passwordValidation],
-        ];
-    }
+//    protected function rules()
+//    {
+//        $passwordValidation = Password::min(6);
+//        if (gs('secure_password')) {
+//            $passwordValidation = $passwordValidation->mixedCase()->numbers()->symbols()->uncompromised();
+//        }
+//        return [
+//            'token' => 'required',
+//            'email' => 'required|email',
+//            'password' => ['required','confirmed',$passwordValidation],
+//        ];
+//    }
 
 }

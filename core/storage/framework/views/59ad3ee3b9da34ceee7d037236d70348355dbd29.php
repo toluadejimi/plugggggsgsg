@@ -163,7 +163,7 @@
             <a href="/" class="logo mb-64">
                 <img src="<?php echo e(url('')); ?>/assets/assets2/images/slider/img.png" alt="Logo">
             </a>
-            <h4 class="account-content__title mb-48 text-capitalize">Welcome Back!</h4>
+            <h4 class="account-content__title mb-48 text-capitalize">Verify Code</h4>
 
 
             <div class="card">
@@ -190,37 +190,26 @@
 
                         </div>
                     <?php endif; ?>
-                    <div class="mb-4">
-                        <p><?php echo app('translator')->get('To recover your account please provide your email or username to find your account.'); ?></p>
-                    </div>
-                    <form method="POST" action="<?php echo e(route('user.password.email')); ?>" class="verify-gcaptcha">
-                        <?php echo csrf_field(); ?>
-                        <div class="form-group">
-                            <label class="my-3"><?php echo app('translator')->get('Email or Username'); ?></label>
-                            <input type="text" class="form-control" name="value" value="<?php echo e(old('value')); ?>"
-                                   required autofocus="off">
-                        </div>
+                        <form action="<?php echo e(route('user.password.verify.code')); ?>" method="POST"
+                              class="submit-form">
+                            <?php echo csrf_field(); ?>
+                            <p class="mb-3"><?php echo app('translator')->get('A 6 digit verification code sent to your email address'); ?>
+                                : <?php echo e(showEmailAddress($email)); ?></p>
+                            <input type="hidden" name="email" value="<?php echo e($email); ?>">
 
-                        <?php if (isset($component)) { $__componentOriginalc0af13564821b3ac3d38dfa77d6cac9157db8243 = $component; } ?>
-<?php $component = App\View\Components\Captcha::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('captcha'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\View\Components\Captcha::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc0af13564821b3ac3d38dfa77d6cac9157db8243)): ?>
-<?php $component = $__componentOriginalc0af13564821b3ac3d38dfa77d6cac9157db8243; ?>
-<?php unset($__componentOriginalc0af13564821b3ac3d38dfa77d6cac9157db8243); ?>
-<?php endif; ?>
+                            <label>Verification Code</label>
+                            <input type="text" name="code" id="verification-code" class="form-control overflow-hidden my-2 mb-4" required autocomplete="off">
 
-                        <div class="my-3">
-                            <button type="submit" class="btn btn-main btn-lg w-100 pill p-3"><?php echo app('translator')->get('Submit'); ?></button>
-                        </div>
-                    </form>
+                            <div class="my-3">
+                                <button type="submit" class="btn btn-main btn-lg w-100 pill p-3"><?php echo app('translator')->get('Verify'); ?></button>
+                            </div>
+
+                            <div class="form-group">
+                                <?php echo app('translator')->get('Please check including your Junk/Spam Folder. if not found, you can'); ?>
+                                <a href="<?php echo e(route('user.password.request')); ?>"
+                                   class="text--base"><?php echo app('translator')->get('Try to send again'); ?></a>
+                            </div>
+                        </form>
 
 
                 </div>
@@ -253,4 +242,5 @@
 </html>
 
 
-<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/project/loggsplug/core/resources/views/templates/basic/user/auth/passwords/email.blade.php ENDPATH**/ ?>
+
+<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/project/loggsplug/core/resources/views/templates/basic/user/auth/passwords/code_verify.blade.php ENDPATH**/ ?>

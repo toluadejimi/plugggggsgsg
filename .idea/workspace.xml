@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2cfd0884-5059-4ef3-b2fd-ec5a1ead117c" name="Changes" comment="remove fund added" />
+    <list default="true" id="2cfd0884-5059-4ef3-b2fd-ec5a1ead117c" name="Changes" comment="remove fund added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/app/Http/Controllers/Gateway/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/app/Http/Controllers/Gateway/PaymentController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -248,6 +251,8 @@
       <workItem from="1714304611882" duration="26000" />
       <workItem from="1714469238390" duration="5838000" />
       <workItem from="1714643249702" duration="75000" />
+      <workItem from="1714674754858" duration="2780000" />
+      <workItem from="1714737449910" duration="2177000" />
     </task>
     <task id="LOCAL-00001" summary="Register Added">
       <option name="closed" value="true" />
@@ -545,13 +550,39 @@
       <option name="project" value="LOCAL" />
       <updated>1714516971224</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1714675737498</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1714675737498</updated>
+    </task>
+    <task id="LOCAL-00039" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1714676914939</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1714676914939</updated>
+    </task>
+    <task id="LOCAL-00040" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1714676966537</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1714676966537</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Register Added" />
     <MESSAGE value="jssss" />
@@ -574,6 +605,20 @@
           <url>file://$PROJECT_DIR$/core/resources/views/templates/basic/user/auth/register.blade.php</url>
           <line>188</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/app/Http/Controllers/Gateway/PaymentController.php</url>
+          <line>238</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/core/app/Http/Controllers/Gateway/PaymentController.php</url>
+          <line>412</line>
+          <properties>
+            <option name="className" value="\App\Http\Controllers\Gateway\PaymentController" />
+            <option name="methodName" value="manualDepositUpdate" />
+          </properties>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
