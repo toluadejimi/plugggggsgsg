@@ -5,8 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cfd0884-5059-4ef3-b2fd-ec5a1ead117c" name="Changes" comment="remove fund added">
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X04f2182f774efc4816bd2db89c786a89.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X134a15f3cce33205d6c69ada367b8ffb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X17a75692ebed91e453e78d05bab93dce.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X1cc04d0dc5675e399a1504398194420d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X27c1eedb533c1dec86ad57be7868eb6f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X28ea304019110ad59a75a889c3f5504c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X3ece5648c7f11d19f5fd326beb32fbd8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X601e2ae101bd2edd586d632a9b585d09.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X6beb639a4fe1e8d7e99f1d7d44c8e42c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X7315e45aa4b1f2f163819b4d15fd1515.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X744c565e526b283a454fed3e44a3754b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X76a7d68c4aa6c938e3a1497ecb6a9c28.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X7c01f60097a8b79f1acbf49d294fd4e3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X7e88755519332d0c9bcea3d5e3fee463.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X879b075f5cca67b8af776cb768d53bdb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X96418b912bd986d29013a35f692c96d3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X9f2344a5f02d28e45c2b3013dd19cc9f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xc072cfaf49689f925a56000e51af9d40.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xc27814200addfedb4e55e98500352c24.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xc8b3a13c003bb02ee718dce74ee6ccac.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xcaf8f088c6247887b78ba8712a29b0ce.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xdf1b4c89d3ff19ab3f4aa32165db83ef.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xf38951857202540c297f21ff6431694f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/framework/sessions/cPKUcpzBWK2xc1nkOOInysby1u11492dMRTT9GZE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/app/Http/Controllers/Gateway/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/app/Http/Controllers/Gateway/PaymentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,6 +276,8 @@
       <workItem from="1714643249702" duration="75000" />
       <workItem from="1714674754858" duration="2780000" />
       <workItem from="1714737449910" duration="2177000" />
+      <workItem from="1714981808957" duration="965000" />
+      <workItem from="1715096295556" duration="484000" />
     </task>
     <task id="LOCAL-00001" summary="Register Added">
       <option name="closed" value="true" />
@@ -574,7 +599,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714676966537</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1714982499511</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1714982499511</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

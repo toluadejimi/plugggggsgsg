@@ -50,7 +50,7 @@
 
 
                     <div class="swiper-slide">
-                        <a href="https://chat.whatsapp.com/HhtBqCw5mEh8ntN0SSE1VQ">
+                        <a href="https://chat.whatsapp.com/LaT8j2YC9KG8RH0iKAZlEj">
                             <div class="card">
                                 <img src="{{ url('') }}/assets/assets2/images/slider/slide1.png"
                                      alt="wallet-image">
@@ -60,7 +60,7 @@
 
 
                     <div class="swiper-slide">
-                        <a href="https://t.me/loggsplugdotcom">
+                        <a href="https://t.me/Dmloggsplugdotcomdotcom">
                             <div class="card">
                                 <img src="{{ url('') }}/assets/assets2/images/slider/slide2.png"
                                      alt="wallet-image">
@@ -69,7 +69,7 @@
                     </div>
 
                     <div class="swiper-slide ">
-                        <a href="https://t.me/loggsplug">
+                        <a href="https://t.me/Dmloggsplugdotcom">
                             <div class="card">
                                 <img src="{{ url('') }}/assets/assets2/images/slider/slide3.png"
                                      alt="wallet-image">
