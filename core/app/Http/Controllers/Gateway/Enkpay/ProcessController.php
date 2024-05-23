@@ -39,7 +39,6 @@ class ProcessController extends Controller
         $ip = $request->ip();
         $deposit = Deposit::where('trx', $request->trans_id)->orderBy('id', 'DESC')->first();
 
-
         if ($request->status == 'failed') {
 
             Deposit::where('trx', $request->trans_id)->update(['status' => 3]);

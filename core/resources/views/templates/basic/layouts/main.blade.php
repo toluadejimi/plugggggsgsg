@@ -278,7 +278,7 @@
 
 
                         <li>
-                            <a href="#" class="sidebar-list__link">
+                            <a href="https://smslord.com/" class="sidebar-list__link">
                                 <span class="sidebar-list__icon">
                                     <img src="{{ url('') }}/assets/assets2/images/icons/sidebar-icon17.svg" alt=""
                                          class="icon">
