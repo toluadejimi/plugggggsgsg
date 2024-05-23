@@ -41,11 +41,35 @@
                     <div class="swiper-slide">
                         <a href="/user/refer">
                             <div class="card">
+                                <img src="{{ url('') }}/assets/assets2/images/slider/slider8.png"
+                                     alt="wallet-image">
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <a href="/user/refer">
+                            <div class="card">
+                                <img src="{{ url('') }}/assets/assets2/images/slider/slider9.png"
+                                     alt="wallet-image">
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <a href="/user/refer">
+                            <div class="card">
                                 <img src="{{ url('') }}/assets/assets2/images/slider/slider7.jpg"
                                      alt="wallet-image">
                             </div>
                         </a>
                     </div>
+
+
+
+
 
 
 
