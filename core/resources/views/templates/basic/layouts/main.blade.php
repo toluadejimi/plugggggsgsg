@@ -263,7 +263,7 @@
                     <hr>
 
                         <li>
-                            <a href="#" class="sidebar-list__link">
+                            <a href="https://socialplugboost.com/" class="sidebar-list__link">
                                 <span class="sidebar-list__icon">
                                     <img src="{{ url('') }}/assets/assets2/images/icons/sidebar-icon16.svg" alt=""
                                          class="icon">
