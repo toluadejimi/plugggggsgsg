@@ -39,7 +39,7 @@
 
 
                     <div class="swiper-slide">
-                        <a href="/user/refer">
+                        <a href="https://smslord.com/">
                             <div class="card">
                                 <img src="{{ url('') }}/assets/assets2/images/slider/slider8.png"
                                      alt="wallet-image">
@@ -49,7 +49,7 @@
 
 
                     <div class="swiper-slide">
-                        <a href="https://smslord.com/">
+                        <a href="https://socialplugboost.com/">
                             <div class="card">
                                 <img src="{{ url('') }}/assets/assets2/images/slider/slider9.png"
                                      alt="wallet-image">
