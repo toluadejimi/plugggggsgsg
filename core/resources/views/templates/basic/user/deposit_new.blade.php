@@ -29,6 +29,8 @@
 
                         <p class="mt-3 p-3">Top up your wallet easily using Bank Transfer or Card</p>
 
+                        <a style="font-weight: bolder" href="https://t.me/loggsplug/32">How to fund your wallet</a>
+
 
                         <div class="p-3">
                             <div class="card-body">
