@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use DB;
 use Illuminate\Support\Facades\Mail;
-use Mail;
 
 class ExportMySQLData extends Command
 {
