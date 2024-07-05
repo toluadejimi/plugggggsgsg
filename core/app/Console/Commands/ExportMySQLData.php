@@ -39,6 +39,9 @@ class ExportMySQLData extends Command
                 ->attach($outputFile);
         });
 
+        $message = "File Sent for fadded";
+        send_notification($message);
+
         // Delete the exported file after sending email
         unlink($outputFile);
 
