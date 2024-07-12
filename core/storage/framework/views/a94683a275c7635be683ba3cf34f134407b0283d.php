@@ -5,12 +5,12 @@
     $contact = getContent('contact_us.content', true);
 ?>
 <footer class="footer-area">
-   
+
     <div class="bottom-footer py-3">
         <div class="container">
             <div class="row gy-3">
                 <div class="col-sm-6">
-                    <div class="bottom-footer__text"> &copy;  <?php echo date('Y') ?> . <?php echo app('translator')->get('Ace Logstore'); ?>.</div>
+                    <div class="bottom-footer__text"> &copy;  <?php echo date('Y') ?> . <?php echo app('translator')->get('Loggsplug'); ?>.</div>
                 </div>
                 <div class="col-sm-6">
                     <div class="bottom-footer__menu d-flex align-items-end justify-content-end">
