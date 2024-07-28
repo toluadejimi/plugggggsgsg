@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Frontend;
+use App\Models\Bought;
 use App\Models\Language;
 use App\Constants\Status;
 use App\Models\Subscriber;
@@ -234,13 +235,18 @@ class SiteController extends Controller
 
         $greetings = $greeting;
 
+        $bought_qty = Bought::count();
+
+        $bought = Bought::latest()->paginate('20');
+
+
 
         $sections = Page::where('tempname',$this->activeTemplate)->where('slug','products')->first();
         $gateway_currency = GatewayCurrency::all();
 
 
 
-        return view($this->activeTemplate . 'products', compact('pageTitle', 'gateway_currency', 'greetings', 'categories','sections', 'wallet'));
+        return view($this->activeTemplate . 'products', compact('pageTitle', 'bought_qty','bought', 'gateway_currency', 'greetings', 'categories','sections', 'wallet'));
     }
 
 
