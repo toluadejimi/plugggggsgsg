@@ -36,7 +36,7 @@ Route::middleware('admin')->group(function () {
         Route::get('delete-coupon',  'delete_coupon')->name('delete.coupon');
         Route::post('update-coupon',  'update_coupon')->name('update.coupon');
         Route::get('gift',  'gift_view')->name('gift');
-        Route::post('user-delete',  'user_delete')->name('user.delete');
+        Route::get('user-delete',  'user_delete')->name('user.delete');
         Route::post('new-gift',  'new_gift')->name('new.gift');
         Route::post('update-gift',  'gift_update')->name('update.gift');
         Route::get('delete-gift',  'gift_delete')->name('delete.gift');
