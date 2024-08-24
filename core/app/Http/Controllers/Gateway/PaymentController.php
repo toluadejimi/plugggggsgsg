@@ -24,8 +24,6 @@ class PaymentController extends Controller
     public function depositInsert(Request $request)
     {
 
-
-
         if($request->payment == "wallet"){
             $qty = $request->qty;
 
@@ -120,22 +118,19 @@ class PaymentController extends Controller
 
 
             $message = "LOGS PLUG |".  Auth::user()->email . "| just bought | $qty | $order->id  | " . number_format($charge_amount, 2) . "\n\n IP ====> " . $request->ip();
-                send_notification2($message);
+            send_notification2($message);
 
 
                 $notify= "Order Purchased Successfully";
                 return redirect('user/orders')->with('message',$notify);
-
-
-
 
         }
 
         if($request->payment == "enkpay"){
 
 
-        if($request->amount < 100) {
-            $notify = "Amount can not be less than 100";
+        if($request->amount < 1000) {
+            $notify = "Amount can not be less than 1000";
             return back()->with('error',$notify);
         }
 
@@ -165,7 +160,6 @@ class PaymentController extends Controller
             return to_route('user.deposit.confirm');
 
         }
-
 
 
         if($request->gateway == 250){
@@ -253,8 +247,6 @@ class PaymentController extends Controller
         ]);
 
         $qty = $request->qty;
-
-
         $product = Product::active()->whereHas('category', function($category){
             return $category->active();
         })->findOrFail($request->id);

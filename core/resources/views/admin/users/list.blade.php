@@ -54,6 +54,10 @@
                                         <a href="{{ route('admin.users.detail', $user->id) }}" class="btn btn-sm btn-outline--primary">
                                             <i class="las la-desktop"></i> @lang('Details')
                                         </a>
+
+                                        <a href="/admin/user-delete?id={{$user->id}}" class="btn btn-sm btn-outline--danger">
+                                            <i class="las la-trash"></i>
+                                        </a>
                                     </div>
                                 </td>
 
@@ -67,7 +71,7 @@
                             </tbody>
                         </table><!-- table end -->
                     </div>
-                </div> 
+                </div>
                 @if ($users->hasPages())
                 <div class="card-footer py-4">
                     {{ paginateLinks($users) }}

@@ -39,17 +39,12 @@ Route::middleware('admin')->group(function () {
         Route::post('new-gift',  'new_gift')->name('new.gift');
         Route::post('update-gift',  'gift_update')->name('update.gift');
         Route::get('delete-gift',  'gift_delete')->name('delete.gift');
-
         Route::get('shipping',  'shipping_view')->name('shipping');
         Route::get('update-shipping',  'shipping_update')->name('update.shipping');
         Route::get('delete-shipping',  'shipping_delete')->name('shipping');
 
-
         Route::post('order-update-gift',  'order_gift_update')->name('update.order.gift');
         Route::get('delete-gift-order',  'order_gift_delete')->name('delete.order.gift');
-
-
-
 
 
 
@@ -86,7 +81,6 @@ Route::middleware('admin')->group(function () {
         Route::post('delete/account/{id}', 'deleteAccount')->name('delete.account');
         Route::post('update/account', 'updateAccount')->name('update.account');
         Route::get('/download/demo/txt', 'downloadDemoTxt')->name('download.demo.txt');
-
     });
 
     // Users Manager
@@ -107,8 +101,6 @@ Route::middleware('admin')->group(function () {
         Route::post('status/{id}', 'status')->name('status');
         Route::post('addbalance/{id}', 'addbalance')->name('addbalance');
         Route::post('removebalance/{id}', 'removebalance')->name('removebalance');
-
-
 
 
         Route::get('send-notification', 'showNotificationAllForm')->name('notification.all');
