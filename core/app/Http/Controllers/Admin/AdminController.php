@@ -22,6 +22,18 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
 
+
+    public function user_delete(request $request)
+    {
+
+        User::where('id', $request->id)->delete();
+        return back()->with('message', "User deleted successfully");
+
+    }
+
+
+
+
     public function gift_view(request $request)
     {
 
