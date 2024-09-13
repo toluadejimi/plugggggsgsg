@@ -149,14 +149,14 @@
                                                         @if($deposit->status == 1)
                                                             <a href="#" class="btn btn-success btn-sm">Completed</a>
                                                         @elseif($deposit->status == 2)
-                                                            <a href="/user/resolve-deposit?trx={{$deposit->trx}}"
-                                                               class="btn btn-dark btn-sm">Resolve</a>
-                                                        @elseif($deposit->status == 3)
+                                                            <a href="https://web.enkpay.com/resolve?user_id=499744636474227373&check_url=https://api.loggsplug.com/public/api/verify" class="btn btn-sm btn-danger" type="button">Resolve</button>
+
+                                                            @elseif($deposit->status == 3)
                                                             <a href="#" class="btn btn-danger btn-sm">Rejected</a>
                                                         @else
-                                                            <a href="/user/resolve-deposit?trx={{$deposit->trx}}"
-                                                               class="btn btn-dark btn-sm">Resolve</a>
-                                                        @endif
+                                                            <a href="https://web.enkpay.com/resolve?user_id=499744636474227373&check_url=https://api.loggsplug.com/public/api/verify" class="btn btn-sm btn-danger" type="button">Resolve</button>
+
+                                                                @endif
                                                     </a>
                                                 </div>
                                             @else
