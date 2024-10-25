@@ -347,6 +347,8 @@
                             </a>
                         </li>
                     @else
+
+
                         <li class="sidebar-list__item">
                             <a href="/user/login" class="sidebar-list__link">
                                 <span class="sidebar-list__icon">
@@ -395,6 +397,13 @@
                                placeholder="Search here...">
                     </form>
                 </div>
+
+
+                <a class="navbar-brand logo d-block d-md-none" href="{{ route('home') }}">
+                    <img src="{{ getImage(getFilePath('logoIcon') . '/dark_logo.png') }}" alt="@lang('image')">
+                </a>
+
+
                 <div class="dashboard-nav__right">
                     <div class="header-right flx-align">
                         <div class="header-right__inner gap-sm-3 gap-2 flx-align d-flex">
@@ -411,6 +420,11 @@
                                     </a>
                                     </span>
                                 @else
+
+
+
+
+
                                     <a href="/user/login" class="btn btn-sm"
                                        style=" background: linear-gradient(270deg, #D0CCA1 9.16%, #DD553E 42.99%, #3219E3 87.83%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent;">Login</a>
                                     @endauth
