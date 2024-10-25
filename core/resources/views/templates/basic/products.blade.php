@@ -28,14 +28,14 @@
                 <div class="swiper-wrapper">
 
 
-                    <div class="swiper-slide">
-                        <a href="https://Wa.me/+2347049631912">
-                            <div class="card">
-                                <img src="{{ url('') }}/assets/assets2/images/slider/slider6.png"
-                                     alt="wallet-image">
-                            </div>
-                        </a>
-                    </div>
+{{--                    <div class="swiper-slide">--}}
+{{--                        <a href="https://Wa.me/+2347049631912">--}}
+{{--                            <div class="card">--}}
+{{--                                <img src="{{ url('') }}/assets/assets2/images/slider/slider6.png"--}}
+{{--                                     alt="wallet-image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
 
 
                     <div class="swiper-slide">
@@ -48,14 +48,14 @@
                     </div>
 
 
-                    <div class="swiper-slide">
-                        <a href="https://socialplugboost.com/">
-                            <div class="card">
-                                <img src="{{ url('') }}/assets/assets2/images/slider/slider9.png"
-                                     alt="wallet-image">
-                            </div>
-                        </a>
-                    </div>
+{{--                    <div class="swiper-slide">--}}
+{{--                        <a href="https://socialplugboost.com/">--}}
+{{--                            <div class="card">--}}
+{{--                                <img src="{{ url('') }}/assets/assets2/images/slider/slider9.png"--}}
+{{--                                     alt="wallet-image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
 
 
                     <div class="swiper-slide">

@@ -262,18 +262,18 @@
 
                     <hr>
 
-                        <li>
-                            <a href="https://socialplugboost.com/" class="sidebar-list__link">
-                                <span class="sidebar-list__icon">
-                                    <img src="{{ url('') }}/assets/assets2/images/icons/sidebar-icon16.svg" alt=""
-                                         class="icon">
-                                    <img src="{{ url('') }}/assets/assets2/images/icons/sidebar-icon-active14.svg"
-                                         alt=""
-                                         class="icon icon-active">
-                                </span>
-                                <span class="text">Boost Social Account</span>
-                            </a>
-                        </li>
+{{--                        <li>--}}
+{{--                            <a href="https://socialplugboost.com/" class="sidebar-list__link">--}}
+{{--                                <span class="sidebar-list__icon">--}}
+{{--                                    <img src="{{ url('') }}/assets/assets2/images/icons/sidebar-icon16.svg" alt=""--}}
+{{--                                         class="icon">--}}
+{{--                                    <img src="{{ url('') }}/assets/assets2/images/icons/sidebar-icon-active14.svg"--}}
+{{--                                         alt=""--}}
+{{--                                         class="icon icon-active">--}}
+{{--                                </span>--}}
+{{--                                <span class="text">Boost Social Account</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
 
 
 
