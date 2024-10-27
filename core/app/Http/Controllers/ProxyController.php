@@ -9,7 +9,7 @@ class ProxyController extends Controller
 {
     public function proxy(Request $request)
     {
-        $apiUrl = 'https://web.enkpay.com/api/resolve-bank';
+        $apiUrl = 'https://web.sprintpay.online/api/resolve-bank';
         $queryParams = $request->query();
         $client = new Client();
 

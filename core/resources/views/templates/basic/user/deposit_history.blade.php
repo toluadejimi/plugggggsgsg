@@ -55,7 +55,7 @@
                         <td>
                             <div class="action-buttons">
                                 @if ($deposit->status == 0)
-                                <a href="https://web.enkpay.com/resolve?user_id=499744636474227373&check_url=https://api.loggsplug.com/public/api/verify" class="btn btn-sm btn-danger" type="button">Resolve</button>
+                                <a href="https://web.sprintpay.online/resolve?user_id=499744636474227373&check_url=https://api.loggsplug.com/public/api/verify" class="btn btn-sm btn-danger" type="button">Resolve</button>
                                  @endif
 
                         </td>

@@ -501,7 +501,7 @@ function get_banks()
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://web.enkpay.com/api/get-banks',
+        CURLOPT_URL => 'https://web.sprintpay.online/api/get-banks',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -530,7 +530,7 @@ function send_money($amount, $bank_code, $acct_no)
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://web.enkpay.com/api/send-money?amount=$amount&bank_code=$bank_code&acct_no=$acct_no&key=$key",
+        CURLOPT_URL => "https://web.sprintpay.online/api/send-money?amount=$amount&bank_code=$bank_code&acct_no=$acct_no&key=$key",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
