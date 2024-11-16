@@ -79,67 +79,65 @@
 
                 <hr>
 
-                <div class="row">
-
-                    <div class="col-6 d-flex justify-content-start">
-                        <input name="qty" style="width: 70px;  text-align: center; border-radius: 10px"
-                               type="number"  id="quantity" class="input-quantity" value="1" min="1">
-
-                    </div>
-
-                    <div class="col-6 d-flex justify-content-end MB-4">
-                        <button type="button"
-                                style="background: #20CCB4FF; color:#ffffff;"
-                                class="btn btn-main btn-sm w-70 pill">NGN<span id="total">10.00</span>
-                        </button>
-
-                    </div>
-
-
-
-                    <script>
-                        const quantityInput = document.getElementById('quantity');
-                        const totalSpan = document.getElementById('total');
-
-                        // Get the initial total value
-                        let unitPrice = {{ $product->price }}; // Replace with your actual unit price
-                        let quantity = parseInt(quantityInput.value); // Parse initial quantity value
-
-
-                        // Update total function
-                        function updateTotal() {
-                            quantity = parseInt(quantityInput.value); // Update quantity variable
-                            let total = unitPrice * quantity; // Calculate total
-                            totalSpan.textContent = total.toFixed(2); // Update total in the span element
-                        }
-
-                        // Event listener for input change
-                        quantityInput.addEventListener('input', updateTotal);
-
-                        // Call updateTotal initially to set the correct initial total
-                        updateTotal();
-                    </script>
-
-
-
-
-                </div>
-                <hr>
-
-                <div class="col-12 mt-3">
-                    <h6 class="mb-3">Share product</h6>
-                    <span class="">{!! $shareComponent !!} </span>
-                </div>
-
 
                 <form action="{{ route('user.deposit.insert') }}" method="POST">
                     @csrf
 
+
+                    <div class="row">
+
+
+                        <div class="col-6 d-flex justify-content-start">
+                            <input name="qty" style="width: 70px;  text-align: center; border-radius: 10px"
+                                   type="number" id="quantity" class="input-quantity" value="1" min="1">
+
+                        </div>
+
+                        <div class="col-6 d-flex justify-content-end MB-4">
+                            <button type="button"
+                                    style="background: #20CCB4FF; color:#ffffff;"
+                                    class="btn btn-main btn-sm w-70 pill">NGN<span id="total">10.00</span>
+                            </button>
+
+                        </div>
+
+
+                        <script>
+                            const quantityInput = document.getElementById('quantity');
+                            const totalSpan = document.getElementById('total');
+
+                            // Get the initial total value
+                            let unitPrice = {{ $product->price }}; // Replace with your actual unit price
+                            let quantity = parseInt(quantityInput.value); // Parse initial quantity value
+
+
+                            // Update total function
+                            function updateTotal() {
+                                quantity = parseInt(quantityInput.value); // Update quantity variable
+                                let total = unitPrice * quantity; // Calculate total
+                                totalSpan.textContent = total.toFixed(2); // Update total in the span element
+                            }
+
+                            // Event listener for input change
+                            quantityInput.addEventListener('input', updateTotal);
+
+                            // Call updateTotal initially to set the correct initial total
+                            updateTotal();
+                        </script>
+
+
+                    </div>
+                    <hr>
+
+                    <div class="col-12 mt-3">
+                        <h6 class="mb-3">Share product</h6>
+                        <span class="">{!! $shareComponent !!} </span>
+                    </div>
+
+
                     <input type="text" hidden name="id" value="{{$product->id}}">
                     <input type="text" hidden type="text" name="payment" value="wallet">
                     <input type="text" hidden name="gateway" value="250">
-
-
 
 
                     <div class="card my-5">
