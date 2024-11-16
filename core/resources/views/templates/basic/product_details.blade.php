@@ -134,10 +134,6 @@
 
                 <form action="{{ route('user.deposit.insert') }}" method="POST">
                     @csrf
-                    {{--                <h6 class="">Have a coupon?</h6>--}}
-                    {{--                <input class="form-control mb-3" name="coupon_code" type="text"--}}
-                    {{--                       placeholder="Enter Coupon Code">--}}
-
 
                     <input type="text" hidden name="id" value="{{$product->id}}">
                     <input type="text" hidden type="text" name="payment" value="wallet">
