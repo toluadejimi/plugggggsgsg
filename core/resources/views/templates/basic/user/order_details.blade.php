@@ -63,8 +63,7 @@
 
 
                                                 <input type="text" id="copy@php echo nl2br(@$item->productDetail->id) @endphp"
-                                                       class="form-control text-small" style="font-size: smaller; border: none"
-                                                       value="@php echo nl2br(@$item->productDetail->details) @endphp">
+                                                       class="form-control text-small" style="font-size: smaller; border: none" value="@php echo nl2br(@$item->productDetail->details) @endphp">
                                                 <span id="message@php echo nl2br(@$item->productDetail->id) @endphp"></span>
 
 

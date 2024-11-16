@@ -62,7 +62,7 @@
                                                 <a class="text-primary" href="{{ route('user.order.details', $order->id) }}">
                                                     <i class="fa fa-shopping-bag"></i>
 
-                                                    {{ $order->id }}
+                                                    {{ $order->id }} {{ "| View Orders" }}
                                                 </a>
                                             </td>
                                             <td>
