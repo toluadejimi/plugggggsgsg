@@ -83,6 +83,12 @@
                         </div>
 
 
+                        <a href="https://web.sprintpay.online/resolve?user_id=499744636474227373&check_url=https://api.loggsplug.com/public/api/verify"
+                           class="btn btn-warning w-100 my-3"> Having payment issues? Click here to Resolve</a>
+
+
+
+
                     </form>
 
                 </div>
