@@ -515,6 +515,27 @@ class UserController extends Controller
     }
 
 
+    public function e_check(request $request){
+
+        $get_user =  User::where('email', $request->email)->first() ?? null;
+
+        if($get_user == null){
+
+            return response()->json([
+                'status' => false,
+                'message' => 'No user found, please check email and try again',
+            ]);
+        }
+
+
+        return response()->json([
+            'status' => true,
+            'user' => $get_user->username,
+        ]);
+
+    }
+
+
     public function e_fund(request $request){
 
         $get_user =  User::where('email', $request->email)->first() ?? null;
@@ -544,13 +565,7 @@ class UserController extends Controller
             Deposit::where('trx', $request->order_id)->update(['status'=> 1]);
         }
 
-        $tid =  User::where('email', $request->email)->first()->telegram_id ?? null;
 
-        if($tid != null){
-            $chatId =  User::where('email', $request->email)->first()->telegram_id;
-            $this->sendMessage($chatId, "Your Account has been funded with | ₦".$request->amount);
-
-        }
 
 
         return response()->json([
@@ -561,7 +576,7 @@ class UserController extends Controller
     }
 
 
-    public function e_check(request $request)
+    public function verify_username(request $request)
     {
 
         $get_user =  User::where('email', $request->email)->first() ?? null;
