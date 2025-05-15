@@ -40,6 +40,26 @@
 
 
                     <div class="swiper-slide">
+                        <a href="https://smslord.com/">
+                            <div class="card">
+                                <img src="<?php echo e(url('')); ?>/assets/assets2/images/slider/slider8.png"
+                                     alt="wallet-image">
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <a href="https://socialplugboost.com/">
+                            <div class="card">
+                                <img src="<?php echo e(url('')); ?>/assets/assets2/images/slider/slider9.png"
+                                     alt="wallet-image">
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="swiper-slide">
                         <a href="/user/refer">
                             <div class="card">
                                 <img src="<?php echo e(url('')); ?>/assets/assets2/images/slider/slider7.jpg"
@@ -47,6 +67,10 @@
                             </div>
                         </a>
                     </div>
+
+
+
+
 
 
 
@@ -220,6 +244,63 @@
         </div>
 
 
+        <div class="col-12 my-4">
+            <?php if(auth()->guard()->check()): ?>
+
+                <div class="card-title mt-3 text-center">
+                    <h6 style="background: #565656; padding: 10px; border-radius: 10px; color: white"
+                        class="text-left">RECENT ORDER</h6>
+                </div>
+
+
+                <div style="height:400px; width:100%; overflow-y: scroll;" class="card">
+                    <div class="card-body">
+
+
+                        <div class="dashboard-body__item">
+                            <div class="table-responsive">
+                                <table class="table style-two">
+                                    <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Time</th>
+
+                                    </tr>
+
+                                    <?php if($bought_qty == 0): ?>
+                                    <?php else: ?>
+                                        <?php $__currentLoopData = $bought; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                                            <tr>
+                                                <td><?php echo e(\Illuminate\Support\Str::limit($data->user_name,4, '.')); ?>, <span style="color: #f10054">just purchase</span><br/> <?php echo e(\Illuminate\Support\Str::limit($data->item,
+                                    16, '...')); ?><span style="color: #000000">₦<?php echo e(number_format($data->amount)); ?></span></td>
+                                                <td><?php echo e(diffForHumans($data->created_at)); ?></td>
+                                            </tr>
+
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    <?php endif; ?>
+
+
+
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            <?php else: ?>
+
+            <?php endif; ?>
+
+        </div>
+
+
+
     </div>
 
 
@@ -244,62 +325,309 @@
 
 
 
+    
 
+    
 
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
 
+    
 
 
+    
 
 
+    
+    
+    
+    
 
+    
+    
+    
+    
+    
+    
+    
 
+    
 
 
+    
+    
+    
+    
+    
 
+    
 
+    
+    
 
 
 
+    
+    
+    
+    
 
+    
 
+    
+    
 
+    
 
+    
+    
+    
+    
 
+    
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
+    
+    
+    
+    
+    
+    
+
+    
+
+
+
+    
+    
+
+
+
+    
+    
+    
+    
+
+
+    
+
+
+    
+
+
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
+    
+    
+    
+    
 
+    
 
+    
+    
+    
 
 
 
+    
 
+    
+    
+    
+    
+    
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
 
 
+    
+    
+    
 
 
 
+    
 
 
+    
 
 
+    
+    
+    
+    
+    
+    
+    
 
 
+    
+    
 
 
 
 
+    
 
 
+    
 
+    
+    
+    
+    
 
+    
+    
+    
+    
+    
+    
 
 
 
@@ -307,258 +635,11 @@
 
 
 
+    
+    
+    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 

@@ -5,7 +5,161 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cfd0884-5059-4ef3-b2fd-ec5a1ead117c" name="Changes" comment="remove fund added">
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X00edcb64bbf32d619c65218de1dcd52c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X070e1c25d00609a734882b90b93755d7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X0a551da1e06e9492acf32927c76d4c78.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X0ace729ef1baa47a891f5975ba40dcf7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X0d0493f059b86ceb893089c3f6a3a835.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X0f548fe02d8a35f726fc6a8f50f525ed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X147506549635fb8569c94f42ac2acca9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X1a81b80d6541a10a653d8a025aa9700d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X1a91391a6f52b505e9e6a02b5b121cc5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X1e0241d64d18f032f4de2a6e00ed832f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X1ef4828109b63018103a10bcdcb12dc9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X217c0898ab986659dfa3ad784e5be135.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X236a59cd949edc1f04950adcaf20b8c1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X247fdd5bad2ffb3581760ba2400a307b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X24b32c4751104e1896c4d7c68d1d43e3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X24ed99acca315283b5823fa25144fed7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X270350a2b4217fb20ae698d764c76461.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X275de599f13f09a7367a4868a0921998.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X287bfcff2ae9fb3e6c7312c3c9fcd774.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X2aa25edcb0df7da9d98c6354677b51e2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X2df1fa207b1be9e6681c6837be9aadd2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X2f2cdd6040122fa1abcf187ed7697f03.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X3093146fcdf35ce97bf9ca7e1db2e5b3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X336bbb74ca6fd519d171762c1ec0b54c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X33c8b3b0923587bdfd736ba9ecd823c7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X36073b46ed05173d15ab8d6a875545c9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X3956d1a18993242abbfc838ac1f8222f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X40c1b803af9ee00913ae46536285fb53.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X41b71310614278d71b8e2944346756be.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X47dd5f2896cc3719a472030b9ad34c49.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X47de8e9796676c3952f2e3aaa61cf042.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X4b4c1e887b02dd688c97a47bf899fcc2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X4e0465f3d81a329052ed372c55a58f2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X4e831c103af474c9f7e50d2ea1545f39.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X4f081fed6b5e0015797017fb546231c7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X524b8a7ce4beafe80ff661f87269efae.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X5989e9f3c06c26da31ada07302ae7d9f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X61563252d30eee3b5546ec7446718b1a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X61984467d8c3cbd307c3553c26b9125e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X63649d2d6b8818ef3e3a3a51f64601d3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X6439dccd55de1bfed428363e448d9f4e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X656aefe77ef1ee6df6c040476626ac11.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X65a5d7549327c71003c40157819e34df.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X694f51cb73cab57fc2feb648c32cc72c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X6a7b8c5e522ba54f8da613441c37f1ef.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X6c0e039377de0bcf1091cb2ee6e64555.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X6daa1f5528888f0a3f2decd2696581a9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X6f5c30352822e14a9f37d640c628fc09.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X7b9b98e2ec2530189df3203962b68162.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X7d4bed223826fff2fc34153d8f7b1e80.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X7d79bfbe001f8c65627ba150eb8a475e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X7f1705561db8ce034d3cd7ef0c02ae45.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X862bf19c9d54fd5056ad8530922a9b80.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X8f29e167aadc757bba6d8bc180c4ba75.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X93b32aaa93ecd12dcfbac3e33c54a20d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X9445c7f9474f16e0cda1bab99aa342db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X94d868f4c7efe7cc4f4b86674ca4bc66.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X9a50a1bd3aa53959c20356001394d3b8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X9a80854ed6c0ea503c06896bce4ee3fa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/X9cca62a6d45c4900ad84221c4ea1132c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xa09c070883edfab56687600436755fd6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xa4570b8275eebbb3be15c3a2515d9e4f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xa47611448e471c5360b03d705ae35349.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xa61deaadf3bae5e30f5dc6f2b9d97920.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xa82dba650fcb2cecc13015ac01b61d28.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xa91bc4ce1d353416b2a20d2c9d8ee0bd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xa9dba5416113db9a019adcbf9c96f0e2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xaadebe40926e287b2d8a717b1cf060ac.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xad2651c28c1941f8a08cc25c06e56306.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xae2a16eb1ba7924bde1430e86d5ae879.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xae42fdee25ba1492c9c651cad15776b0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xafd41997981ed2fce1d0e6dbffa7b617.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xb09b56c099b4668456d53f802b22fa3e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xb6a2fc572e7a532b1d28846196d43b34.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xb840c80a91562ffa1cf6086e773ade7c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xc2211e8e053e016d1f5a717b352ac170.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xc4d03c70d3fab7d1fdfa1cf0a08f37ec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xc5188dbe6d39da40d4e87dc3ed59848d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xc54382db759f49f76fc0ff4ea79d3e79.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xc61f604912e73b54b3924b2794b111b8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xcad60cb232e54803f0025ac90b473999.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xcdbb6e24716412f587b0e9f1a38880dc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xd335f6e313a1987ef554453d4a300344.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xdeba7c80b1e05029276b6cac39cf401a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xdfa55822639426249a5bf604e8164430.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xe0b852f5eda1b2fd554a7ffd576019a1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xe2147f0d115a1435e568f1a7a8eea86e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xe3388683f3a08efa9b3eae881afe6f8f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xe4a8096d02f274afe1e2a8b342d79e81.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xe597e63b748cfd8890be78b84e79e25f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xe8777e848c4273acda16959b8c4fe6ea.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xe8f94e8426ae333e5607f56d4e598540.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xea8ed7728d8e7c20073a95bc726bab33.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xedb857ddd75d16035096baaaa6ea9eb8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xf32677c023775d53b9a5055a1794fb7c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xf3a0bbb684191108108a6ccdd8b18c68.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xf5bef470d90aa4564021fc057952446a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xf67d64aa434ca87df519d88499213e02.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/debugbar/Xf7ac8b27fdd17e2faf870df47a704ffd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/storage/framework/sessions/zLcsd6lUpSOySv85g4sfE0yfkWRwOyMpPXZI2RHs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/app/Http/Controllers/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/app/Http/Controllers/User/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/resources/views/templates/basic/user/referal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/resources/views/templates/basic/user/referal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X04f2182f774efc4816bd2db89c786a89.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X05e980b19f16db06c0140853eb6660df.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X09dfea1e1a9a44ce0111b9034f3fbf98.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X0da52d9efae89c3faa9c32533116d140.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X134a15f3cce33205d6c69ada367b8ffb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X17a75692ebed91e453e78d05bab93dce.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X1cc04d0dc5675e399a1504398194420d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X1f900232edca7ab0ae7967fa60d3948f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X1fba444237c26a8d911d2afec372a618.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X27c1eedb533c1dec86ad57be7868eb6f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X28ea304019110ad59a75a889c3f5504c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X2e14e0bfd46e581224c2b3dbe1c4a23a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X3620a8a2ac0dc42845bc7a5eaa97eb5f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X3ece5648c7f11d19f5fd326beb32fbd8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X41e7f64678e225dd0261ed48c3bf0f4a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X46d2c37bf246411599a68e537959b520.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X4b1f673e76163b6c3eea32754270ba4c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X601e2ae101bd2edd586d632a9b585d09.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X66306736c4b440c0581758039834211e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X6beb639a4fe1e8d7e99f1d7d44c8e42c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X7315e45aa4b1f2f163819b4d15fd1515.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X744c565e526b283a454fed3e44a3754b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X76a7d68c4aa6c938e3a1497ecb6a9c28.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X78b4caff3d579d1b3351ce602dbe5674.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X7c01f60097a8b79f1acbf49d294fd4e3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X7e88755519332d0c9bcea3d5e3fee463.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X84d0fcad565d4fe5676fcde64a39b5c7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X879b075f5cca67b8af776cb768d53bdb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X918e9048a28478267e3e5da6d609a81f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X96418b912bd986d29013a35f692c96d3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X9db1b9958465b0aa74dbb08d6d78df73.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/X9f2344a5f02d28e45c2b3013dd19cc9f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xab390d6a67444f9749daf4a16deb0185.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xb3025454b5f081f9442733004a548700.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xc072cfaf49689f925a56000e51af9d40.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xc22c3833f77d0aee71d24f9d332d365f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xc27814200addfedb4e55e98500352c24.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xc6be27c54d13bcedc292dea3a862571b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xc6c2680b7c562566b1332ad7d7c0085b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xc8b3a13c003bb02ee718dce74ee6ccac.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xcaf8f088c6247887b78ba8712a29b0ce.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xdf1b4c89d3ff19ab3f4aa32165db83ef.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xf38951857202540c297f21ff6431694f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xf48d570de2d1d5efd6ce0f11b9d6815a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/debugbar/Xf7ec7b84d21801a8e92c49c529ca2052.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/framework/cache/data/43/38/43386c3ae076423b72a6ad828e3f179740bde2ab" beforeDir="false" afterPath="$PROJECT_DIR$/core/storage/framework/cache/data/43/38/43386c3ae076423b72a6ad828e3f179740bde2ab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/framework/cache/data/b7/9c/b79c6627304a3fbfaaad71fb8a8f70b602cd0d16" beforeDir="false" afterPath="$PROJECT_DIR$/core/storage/framework/cache/data/b7/9c/b79c6627304a3fbfaaad71fb8a8f70b602cd0d16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/framework/sessions/MMSwts9EDVZVCw2o2ATlHuXpZKFOgXoI9UApL1hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/framework/sessions/cPKUcpzBWK2xc1nkOOInysby1u11492dMRTT9GZE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/framework/views/02174f46e3b538cee3f41d8ae7e04e172acb056c.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/storage/framework/views/02174f46e3b538cee3f41d8ae7e04e172acb056c.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/framework/views/fb8da63a9be2d10f8f4d993389d4bf443aba4e3c.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/storage/framework/views/fb8da63a9be2d10f8f4d993389d4bf443aba4e3c.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/core/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,166 +420,24 @@
       <workItem from="1717699257135" duration="483000" />
       <workItem from="1717738541585" duration="587000" />
       <workItem from="1717935774085" duration="883000" />
-    </task>
-    <task id="LOCAL-00001" summary="Register Added">
-      <option name="closed" value="true" />
-      <created>1712916354145</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1712916354146</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Register Added">
-      <option name="closed" value="true" />
-      <created>1712916780389</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1712916780389</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Register Added">
-      <option name="closed" value="true" />
-      <created>1712917357887</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1712917357887</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Register Added">
-      <option name="closed" value="true" />
-      <created>1712919008565</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1712919008565</updated>
-    </task>
-    <task id="LOCAL-00005" summary="jssss">
-      <option name="closed" value="true" />
-      <created>1712919048850</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1712919048850</updated>
-    </task>
-    <task id="LOCAL-00006" summary="jssss">
-      <option name="closed" value="true" />
-      <created>1712920697721</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1712920697722</updated>
-    </task>
-    <task id="LOCAL-00007" summary="telegram added">
-      <option name="closed" value="true" />
-      <created>1712922740684</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1712922740684</updated>
-    </task>
-    <task id="LOCAL-00008" summary="telegram added">
-      <option name="closed" value="true" />
-      <created>1712922810206</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1712922810206</updated>
-    </task>
-    <task id="LOCAL-00009" summary="telegram added">
-      <option name="closed" value="true" />
-      <created>1712923712382</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1712923712382</updated>
-    </task>
-    <task id="LOCAL-00010" summary="telegram added">
-      <option name="closed" value="true" />
-      <created>1712925363194</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1712925363194</updated>
-    </task>
-    <task id="LOCAL-00011" summary="telegram added">
-      <option name="closed" value="true" />
-      <created>1712959962498</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1712959962498</updated>
-    </task>
-    <task id="LOCAL-00012" summary="telegram added">
-      <option name="closed" value="true" />
-      <created>1712960724628</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1712960724628</updated>
-    </task>
-    <task id="LOCAL-00013" summary="telegram added">
-      <option name="closed" value="true" />
-      <created>1712997792251</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1712997792251</updated>
-    </task>
-    <task id="LOCAL-00014" summary="telegram added">
-      <option name="closed" value="true" />
-      <created>1713209983636</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1713209983636</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Git items corrected">
-      <option name="closed" value="true" />
-      <created>1713210204122</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1713210204122</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Git items corrected">
-      <option name="closed" value="true" />
-      <created>1713210600404</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1713210600404</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Git items corrected">
-      <option name="closed" value="true" />
-      <created>1713211009879</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1713211009879</updated>
-    </task>
-    <task id="LOCAL-00018" summary="rules added">
-      <option name="closed" value="true" />
-      <created>1713217179797</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1713217179797</updated>
-    </task>
-    <task id="LOCAL-00019" summary="rules added">
-      <option name="closed" value="true" />
-      <created>1713217276948</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1713217276948</updated>
-    </task>
-    <task id="LOCAL-00020" summary="rules added">
-      <option name="closed" value="true" />
-      <created>1713217384434</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1713217384434</updated>
+      <workItem from="1720784733746" duration="1522000" />
+      <workItem from="1720853057412" duration="6000" />
+      <workItem from="1720859643016" duration="458000" />
+      <workItem from="1720883107940" duration="228000" />
+      <workItem from="1720907298706" duration="28000" />
+      <workItem from="1721020269628" duration="2000" />
+      <workItem from="1721035733739" duration="679000" />
+      <workItem from="1721146014786" duration="162000" />
+      <workItem from="1722144935438" duration="2253000" />
+      <workItem from="1722578079701" duration="831000" />
+      <workItem from="1724485592682" duration="5362000" />
+      <workItem from="1730017824842" duration="1099000" />
+      <workItem from="1730760376330" duration="7952000" />
+      <workItem from="1741785174579" duration="43000" />
+      <workItem from="1741785804312" duration="431000" />
+      <workItem from="1742401083123" duration="2285000" />
+      <workItem from="1743074220409" duration="557000" />
+      <workItem from="1743514847330" duration="726000" />
     </task>
     <task id="LOCAL-00021" summary="rules added">
       <option name="closed" value="true" />
@@ -651,7 +663,175 @@
       <option name="project" value="LOCAL" />
       <updated>1716953385451</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1720785243139</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1720785243139</updated>
+    </task>
+    <task id="LOCAL-00050" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1722146318965</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1722146318965</updated>
+    </task>
+    <task id="LOCAL-00051" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1722146769361</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1722146769361</updated>
+    </task>
+    <task id="LOCAL-00052" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1722578195896</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1722578195896</updated>
+    </task>
+    <task id="LOCAL-00053" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1724489109557</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1724489109559</updated>
+    </task>
+    <task id="LOCAL-00054" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1724490518823</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1724490518824</updated>
+    </task>
+    <task id="LOCAL-00055" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1724490625519</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1724490625520</updated>
+    </task>
+    <task id="LOCAL-00056" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1730017893553</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1730017893553</updated>
+    </task>
+    <task id="LOCAL-00057" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1731051887360</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1731051887360</updated>
+    </task>
+    <task id="LOCAL-00058" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1731254224471</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1731254224471</updated>
+    </task>
+    <task id="LOCAL-00059" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1731254357753</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1731254357753</updated>
+    </task>
+    <task id="LOCAL-00060" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1731788473996</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1731788473996</updated>
+    </task>
+    <task id="LOCAL-00061" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1731789006778</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1731789006779</updated>
+    </task>
+    <task id="LOCAL-00062" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1731789186982</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1731789186982</updated>
+    </task>
+    <task id="LOCAL-00063" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1731789247946</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1731789247946</updated>
+    </task>
+    <task id="LOCAL-00064" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1731789495572</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1731789495572</updated>
+    </task>
+    <task id="LOCAL-00065" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1731789625665</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1731789625665</updated>
+    </task>
+    <task id="LOCAL-00066" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1742502346889</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1742502346889</updated>
+    </task>
+    <task id="LOCAL-00067" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1743074574221</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1743074574222</updated>
+    </task>
+    <task id="LOCAL-00068" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1743517082771</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1743517082771</updated>
+    </task>
+    <task id="LOCAL-00069" summary="remove fund added">
+      <option name="closed" value="true" />
+      <created>1743517225818</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1743517225818</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,17 +865,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/core/app/Http/Controllers/Gateway/PaymentController.php</url>
-          <line>238</line>
+          <line>262</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/app/Http/Controllers/Gateway/PaymentController.php</url>
+          <line>282</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/core/app/Http/Controllers/Gateway/PaymentController.php</url>
-          <line>412</line>
+          <line>434</line>
           <properties>
             <option name="className" value="\App\Http\Controllers\Gateway\PaymentController" />
             <option name="methodName" value="manualDepositUpdate" />
           </properties>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/core/app/Http/Helpers/helpers.php</url>
+          <line>522</line>
+          <properties>
+            <option name="className" value="" />
+            <option name="methodName" value="\send_money" />
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

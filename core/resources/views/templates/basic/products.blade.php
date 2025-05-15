@@ -84,7 +84,7 @@
 
 
                     <div class="swiper-slide">
-                        <a href="https://t.me/Chequest_pl">
+                        <a href="T.me/custmoerlogsms">
                             <div class="card">
                                 <img src="{{ url('') }}/assets/assets2/images/slider/slide2.png"
                                      alt="wallet-image">

@@ -296,7 +296,6 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.3.0/fetch-jsonp.min.js"></script>
-
     <script>
         window.onload = function () {
             document.getElementById('inputField').disabled = true;

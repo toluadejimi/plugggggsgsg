@@ -564,9 +564,7 @@ class UserController extends Controller
         }else{
             Deposit::where('trx', $request->order_id)->update(['status'=> 1]);
         }
-
-
-
+        
 
         return response()->json([
             'status' => true,
