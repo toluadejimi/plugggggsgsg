@@ -130,7 +130,7 @@
 
             <div class="row">
 
-                <div class="col-9 d-flex justify-content-start">
+                <div class="col-xl-9 col-sm-12 d-flex justify-content-start ">
 
                     <h4 class="mb-0"
                         style=" background: linear-gradient(270deg, #D0CCA1 9.16%, #DD553E 42.99%, #3219E3 87.83%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent;">
@@ -138,7 +138,7 @@
 
                 </div>
 
-                <div class="col-3 d-flex justify-content-end">
+                <div class="col-xl-3 col-sm-12 d-flex justify-content-end">
                     <select id="urlSelect" onchange="redirectToUrl()" class="btn btn-sm btn-dark">
                         <option value="">Categories</option>
                         @foreach($categories as $data)
