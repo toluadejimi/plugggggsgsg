@@ -69,7 +69,7 @@
 
                                             <td class="text-dark">
 
-                                                @php $name = \App\Models\Product::where('id', $order->product_id)->first()->name; @endphp
+                                                @php $name = \App\Models\Product::where('id', $order->product_id)->first()->name ?? null; @endphp
                                                 <a class="text-primary" href="{{ route('user.order.details', $order->id) }}">
                                                     {{ $name ?? "Product Name" }}
                                             </td>
