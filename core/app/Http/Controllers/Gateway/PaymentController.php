@@ -108,6 +108,8 @@ class PaymentController extends Controller
 
             Order::where('id', $order->id)->update(['product_id' => $product->id]);
 
+            $name = Product::where('id', $product->id)->first()->name ?? null;
+
 
             $ref = Referre::where('refrere', Auth::user()->username)->where('status', 0)->first();
             if ($ref) {
@@ -123,7 +125,7 @@ class PaymentController extends Controller
                 'amount' => $amount,
             ]);
 
-            $message = "LOGS PLUG |" . Auth::user()->email . "| just bought | $qty | Order ID: $order->id | ₦" . number_format($charge_amount, 2) . "\n\nIP => " . $request->ip();
+            $message = "LOGS PLUG |" . Auth::user()->email . "| just bought | $qty | Product: $name | ₦" . number_format($charge_amount, 2) . "\n\nIP => " . $request->ip();
             send_notification2($message);
 
             return redirect('user/orders')->with('message', 'Order Purchased Successfully');
