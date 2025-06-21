@@ -13,17 +13,24 @@ class ProductDetail extends Model
 {
     use HasFactory, GlobalStatus, Searchable;
 
+
+    protected $fillable = [
+        'product_id',
+        'serial_number',
+        'is_sold',
+    ];
+
     public function product(){
         return $this->belongsTo(Product::class);
-    } 
+    }
 
     public function scopeSold($query){
         return $query->where('is_sold', Status::YES);
-    } 
+    }
 
     public function scopeUnSold($query){
         return $query->where('is_sold', Status::NO)->orderBy('id', 'ASC');
-    } 
+    }
 
     public function statusBadge(): Attribute{
         return new Attribute(

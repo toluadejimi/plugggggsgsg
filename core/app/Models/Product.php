@@ -14,27 +14,32 @@ class Product extends Model
     use HasFactory, GlobalStatus, Searchable;
 
     protected $appends = ['in_stock'];
- 
+
     public function category(){
         return $this->belongsTo(Category::class);
-    } 
+    }
 
     public function user(){
         return $this->belongsTo(User::class);
-    }  
-    
+    }
+
     public function productDetails(){
         return $this->hasMany(ProductDetail::class);
     }
-    
+
     public function soldProductDetails(){
         return $this->hasMany(ProductDetail::class)->sold();
     }
-    
-    public function unsoldProductDetails(){
-        return $this->hasMany(ProductDetail::class)->unsold();
+
+//    public function unsoldProductDetails(){
+//        return $this->hasMany(ProductDetail::class)->unsold();
+//    }
+
+    public function unsoldProductDetails()
+    {
+        return $this->hasMany(ProductDetail::class)->where('is_sold', 0);
     }
-    
+
     public function inStock(): Attribute{
         return new Attribute(function(){
             return @$this->productDetails->where('is_sold', Status::NO)->count() ?? 0;

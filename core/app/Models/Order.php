@@ -13,6 +13,13 @@ class Order extends Model
 {
     use HasFactory, GlobalStatus, Searchable;
 
+
+    protected $fillable = [
+        'user_id',
+        'total_amount',
+        'status',
+    ];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
@@ -45,6 +52,9 @@ class Order extends Model
             return $html;
         });
     }
-    
+
+
+
+
+
 }
-   

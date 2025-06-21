@@ -44,106 +44,213 @@ class PaymentController extends Controller
 
             }
 
-
-
             $qty = $request->qty;
 
-            $product = Product::active()->whereHas('category', function($category){
+            $product = Product::active()->whereHas('category', function ($category) {
                 return $category->active();
             })->findOrFail($request->id);
 
+            $unsoldProductDetails = $product->unsoldProductDetails;
 
-            if($product->in_stock < $qty){
-                $notify="Not enough stock available. Only {$product->in_stock} quantity left";
-                return redirect('/products')->with('error',$notify);
+            if ($unsoldProductDetails->count() < $qty) {
+                return redirect('/products')->with('error', "Product sold out or not enough quantity left.");
             }
 
-            $amount = ($product->price * $qty);
+//            $alreadyBought = OrderItem::where('product_id', $product->id)
+//                ->whereHas('order', function ($q) {
+//                    $q->where('user_id', Auth::id());
+//                })->exists();
+//
+//            if ($alreadyBought) {
+//                return redirect('/products')->with('error', 'You have already purchased this product.');
+//            }
 
+            $amount = $product->price * $qty;
+            $balance = Auth::user()->balance ?? 0;
 
-            $balance = Auth::user()->balance ?? null;
-            if($balance < $amount){
-                $notify = "Insufficient Funds, Fund your wallet";
-                return redirect('/products')->with('error',$notify);
-
+            if ($balance < $amount) {
+                return redirect('/products')->with('error', 'Insufficient funds. Fund your wallet first.');
             }
-
-
 
             $final_amo = $amount;
-
             if ($request->coupon_code != null) {
+                $ck = CouponCode::where('coupon_code', $request->coupon_code)->first();
+                if (!$ck) return back()->with('error', 'Coupon does not exist');
+                if ($ck->status == 2) return back()->with('error', 'Coupon is not valid');
 
-                $ck = CouponCode::where('coupon_code', $request->coupon_code)->first() ?? null;
-                if ($ck == null) {
-                    return back()->with('error', 'Coupon does not exist');
-                }
-
-                if ($ck->status == 2) {
-                    return back()->with('error', 'Coupon is not valid');
-                }
-
-
-
-                $percentage = $ck->amount / 100;
-                $coupon_amount = $percentage * $final_amo;
-
+                $coupon_amount = ($ck->amount / 100) * $final_amo;
                 $charge_amount = $final_amo - $coupon_amount;
-
-
             } else {
                 $charge_amount = $final_amo;
             }
 
-
             User::where('id', Auth::id())->decrement('balance', $charge_amount);
 
-            $order = new Order();
-            $order->user_id = Auth::id();
-            $order->total_amount = $charge_amount;
-            $order->status = 1;
-            $order->save();
+
+
+            $order = Order::create([
+                'user_id' => Auth::id(),
+                'total_amount' => $charge_amount,
+                'product_id' => $product->id,
+                'status' => 1,
+            ]);
+
+            foreach ($unsoldProductDetails->take($qty) as $detail) {
+                $detail->update(['is_sold' => 1]);
+
+                OrderItem::create([
+                    'order_id' => $order->id,
+                    'product_id' => $product->id,
+                    'product_detail_id' => $detail->id,
+                    'price' => $product->price,
+                ]);
+            }
+
+            Order::where('id', $order->id)->update(['product_id' => $product->id]);
+
+
+            $ref = Referre::where('refrere', Auth::user()->username)->where('status', 0)->first();
+            if ($ref) {
+                $ref_amount = $ref->amount;
+                User::where('username', $ref->referer)->increment('ref_wallet', $ref_amount);
+                $ref->update(['status' => 1]);
+            }
+
+            Bought::create([
+                'user_name' => Auth::user()->username,
+                'qty' => $qty,
+                'item' => $product->name,
+                'amount' => $amount,
+            ]);
+
+            $message = "LOGS PLUG |" . Auth::user()->email . "| just bought | $qty | Order ID: $order->id | ₦" . number_format($charge_amount, 2) . "\n\nIP => " . $request->ip();
+            send_notification2($message);
+
+            return redirect('user/orders')->with('message', 'Order Purchased Successfully');
+
+
+
+
+        }
+
+        if($request->payment == "enkpay"){
+
+
+            if($request->amount < 1000) {
+                $notify = "Amount can not be less than 1000";
+                return back()->with('error',$notify);
+            }
+
+
+            if($request->amount > 100000) {
+                $notify = "Amount can not be more than 100,000";
+                return back()->with('error',$notify);
+            }
+
+
+            $data = new Deposit();
+            $data->user_id = Auth::id();
+            //$data->order_id = $order->id;
+            $data->method_code = $request->gateway;
+            $data->method_currency = "NGN";
+            $data->amount = $request->amount;
+            $data->charge = 0;
+            $data->rate = 0;
+            $data->final_amo = $request->amount;
+            $data->btc_amo = 0;
+            $data->btc_wallet = "";
+            $data->trx = getTrx();
+            $data->save();
+
+
+            session()->put('Track', $data->trx);
+            return to_route('user.deposit.confirm');
+
+        }
+
+
+        if($request->gateway == 250){
+
+            $qty = $request->qty;
+
+            $product = Product::active()->whereHas('category', function ($category) {
+                return $category->active();
+            })->findOrFail($request->id);
 
             $unsoldProductDetails = $product->unsoldProductDetails;
 
+            if ($unsoldProductDetails->count() < $qty) {
+                return redirect('/products')->with('error', "Product sold out or not enough quantity left.");
+            }
 
-                for($i = 0; $i < $qty; $i++){
-                    if(@!$unsoldProductDetails[$i]){
-                        continue;
-                    }
-                    $item = new OrderItem();
-                    $item->order_id = $order->id;
-                    $item->product_id = $product->id;
-                    $item->product_detail_id = $unsoldProductDetails[$i]->id;
-                    $item->price = $product->price;
-                    $item->save();
+//            $alreadyBought = OrderItem::where('product_id', $product->id)
+//                ->whereHas('order', function ($q) {
+//                    $q->where('user_id', Auth::id());
+//                })->exists();
+//
+//            if ($alreadyBought) {
+//                return redirect('/products')->with('error', 'You have already purchased this product.');
+//            }
 
+            $amount = $product->price * $qty;
+            $balance = Auth::user()->balance ?? 0;
 
-                }
+            if ($balance < $amount) {
+                return redirect('/products')->with('error', 'Insufficient funds. Fund your wallet first.');
+            }
 
-                $ck_ref = Referre::where('refrere', Auth::user()->username)->where('status', 0)->first()->referer ?? null;
-                if($ck_ref != null){
-                    Referre::where('referer', $ck_ref)->where('refrere', Auth::user()->username)->update(['status' => 1]);
-                   $ref_amount = Referre::where('referer', $ck_ref)->first()->amount;
-                    User::where('username', $ck_ref)->increment('ref_wallet', $ref_amount);
-                }
+            $final_amo = $amount;
+            if ($request->coupon_code != null) {
+                $ck = CouponCode::where('coupon_code', $request->coupon_code)->first();
+                if (!$ck) return back()->with('error', 'Coupon does not exist');
+                if ($ck->status == 2) return back()->with('error', 'Coupon is not valid');
 
+                $coupon_amount = ($ck->amount / 100) * $final_amo;
+                $charge_amount = $final_amo - $coupon_amount;
+            } else {
+                $charge_amount = $final_amo;
+            }
 
-            $br = new Bought();
-            $br->user_name = Auth::user()->username;
-            $br->qty = $qty;
-            $br->item = $product->name;
-            $br->amount = $amount;
-            $br->save();
+            User::where('id', Auth::id())->decrement('balance', $charge_amount);
 
+            $order = Order::create([
+                'user_id' => Auth::id(),
+                'total_amount' => $charge_amount,
+                'status' => 1,
+            ]);
 
+            foreach ($unsoldProductDetails->take($qty) as $detail) {
+                // Mark product detail as sold
+                $detail->update(['is_sold' => 1]);
 
-            $message = "LOGS PLUG |".  Auth::user()->email . "| just bought | $qty | $order->id  | " . number_format($charge_amount, 2) . "\n\n IP ====> " . $request->ip();
+                // Create order item
+                OrderItem::create([
+                    'order_id' => $order->id,
+                    'product_id' => $product->id,
+                    'product_detail_id' => $detail->id,
+                    'price' => $product->price,
+                ]);
+            }
+
+            $ref = Referre::where('refrere', Auth::user()->username)->where('status', 0)->first();
+            if ($ref) {
+                $ref_amount = $ref->amount;
+                User::where('username', $ref->referer)->increment('ref_wallet', $ref_amount);
+                $ref->update(['status' => 1]);
+            }
+
+            Bought::create([
+                'user_name' => Auth::user()->username,
+                'qty' => $qty,
+                'item' => $product->name,
+                'amount' => $amount,
+            ]);
+
+            $message = "LOGS PLUG |" . Auth::user()->email . "| just bought | $qty | Order ID: $order->id | ₦" . number_format($charge_amount, 2) . "\n\nIP => " . $request->ip();
             send_notification2($message);
 
+            return redirect('user/orders')->with('message', 'Order Purchased Successfully');
 
-                $notify= "Order Purchased Successfully";
-                return redirect('user/orders')->with('message',$notify);
 
         }
 
@@ -187,78 +294,91 @@ class PaymentController extends Controller
 
             $qty = $request->qty;
 
-            $product = Product::active()->whereHas('category', function($category){
+            $product = Product::active()->whereHas('category', function ($category) {
                 return $category->active();
             })->findOrFail($request->id);
 
-            if($product->in_stock < $qty){
-                $notify = "Not enough stock available. Only {$product->in_stock} quantity left";
-                return back()->with('error',$notify);
-
-            }
-
-            $amount = ($product->price * $qty);
-
-            $user = auth()->user();
-            $gate = GatewayCurrency::whereHas('method', function ($gate) {
-                $gate->where('status', Status::ENABLE);
-            })->where('method_code', $request->gateway)->where('currency', $request->currency)->first();
-            if (!$gate) {
-                $notify[] = ['error', 'Invalid gateway'];
-                return back()->withNotify($notify);
-            }
-
-            if ($gate->min_amount > $amount || $gate->max_amount < $amount) {
-                $notify[] = ['error', 'Please follow deposit limit'];
-                return back()->withNotify($notify);
-            }
-
-            $charge = $gate->fixed_charge + ($amount * $gate->percent_charge / 100);
-            $payable = $amount + $charge;
-            $final_amo = $payable * $gate->rate;
-
-            $order = new Order();
-            $order->user_id = $user->id;
-            $order->total_amount = $amount;
-            $order->save();
-
-            $data = new Deposit();
-            $data->user_id = $user->id;
-            $data->order_id = $order->id;
-            $data->method_code = $gate->method_code;
-            $data->method_currency = strtoupper($gate->currency);
-            $data->amount = $amount;
-            $data->charge = $charge;
-            $data->rate = $gate->rate;
-            $data->final_amo = $final_amo;
-            $data->btc_amo = 0;
-            $data->btc_wallet = "";
-            $data->trx = getTrx();
-            $data->save();
-
             $unsoldProductDetails = $product->unsoldProductDetails;
 
-            for($i = 0; $i < $qty; $i++){
-                if(@!$unsoldProductDetails[$i]){
-                    continue;
-                }
-                $item = new OrderItem();
-                $item->order_id = $order->id;
-                $item->product_id = $product->id;
-                $item->product_detail_id = $unsoldProductDetails[$i]->id;
-                $item->price = $product->price;
-                $item->save();
+            if ($unsoldProductDetails->count() < $qty) {
+                return redirect('/products')->with('error', "Product sold out or not enough quantity left.");
             }
 
+//            $alreadyBought = OrderItem::where('product_id', $product->id)
+//                ->whereHas('order', function ($q) {
+//                    $q->where('user_id', Auth::id());
+//                })->exists();
+//
+//            if ($alreadyBought) {
+//                return redirect('/products')->with('error', 'You have already purchased this product.');
+//            }
 
+            $amount = $product->price * $qty;
+            $balance = Auth::user()->balance ?? 0;
 
+            if ($balance < $amount) {
+                return redirect('/products')->with('error', 'Insufficient funds. Fund your wallet first.');
+            }
+
+            $final_amo = $amount;
+            if ($request->coupon_code != null) {
+                $ck = CouponCode::where('coupon_code', $request->coupon_code)->first();
+                if (!$ck) return back()->with('error', 'Coupon does not exist');
+                if ($ck->status == 2) return back()->with('error', 'Coupon is not valid');
+
+                $coupon_amount = ($ck->amount / 100) * $final_amo;
+                $charge_amount = $final_amo - $coupon_amount;
+            } else {
+                $charge_amount = $final_amo;
+            }
+
+            User::where('id', Auth::id())->decrement('balance', $charge_amount);
+
+            $order = Order::create([
+                'user_id' => Auth::id(),
+                'total_amount' => $charge_amount,
+                'status' => 1,
+            ]);
+
+            foreach ($unsoldProductDetails->take($qty) as $detail) {
+                // Mark product detail as sold
+                $detail->update(['is_sold' => 1]);
+
+                // Create order item
+                OrderItem::create([
+                    'order_id' => $order->id,
+                    'product_id' => $product->id,
+                    'product_detail_id' => $detail->id,
+                    'price' => $product->price,
+                ]);
+            }
+
+            $ref = Referre::where('refrere', Auth::user()->username)->where('status', 0)->first();
+            if ($ref) {
+                $ref_amount = $ref->amount;
+                User::where('username', $ref->referer)->increment('ref_wallet', $ref_amount);
+                $ref->update(['status' => 1]);
+            }
+
+            Bought::create([
+                'user_name' => Auth::user()->username,
+                'qty' => $qty,
+                'item' => $product->name,
+                'amount' => $amount,
+            ]);
+
+            $message = "LOGS PLUG |" . Auth::user()->email . "| just bought | $qty | Order ID: $order->id | ₦" . number_format($charge_amount, 2) . "\n\nIP => " . $request->ip();
+            send_notification2($message);
 
             session()->put('Track', $data->trx);
-            return to_route('user.deposit.confirm');
+            return redirect('user/orders')->with('message', 'Order Purchased Successfully');
+
 
 
 
         }
+
+
 
         $request->validate([
             'gateway' => 'required',
@@ -271,6 +391,15 @@ class PaymentController extends Controller
         $product = Product::active()->whereHas('category', function($category){
             return $category->active();
         })->findOrFail($request->id);
+
+//        $existingOrderItem = OrderItem::where('product_details_id', $product->id)
+//            ->whereHas('order', function($q) {
+//                $q->where('user_id', Auth::id());
+//            })->first();
+//
+//        if ($existingOrderItem) {
+//            return redirect('/products')->with('error', 'You have already purchased this product.');
+//        }
 
         if($product->in_stock < $qty){
             $notify[] = ['error', "Not enough stock available. Only {$product->in_stock} quantity left"];
@@ -297,10 +426,7 @@ class PaymentController extends Controller
         $payable = $amount + $charge;
         $final_amo = $payable * $gate->rate;
 
-        $order = new Order();
-        $order->user_id = $user->id;
-        $order->total_amount = $amount;
-        $order->save();
+
 
         $data = new Deposit();
         $data->user_id = $user->id;
@@ -329,6 +455,15 @@ class PaymentController extends Controller
             $item->price = $product->price;
             $item->save();
         }
+
+
+        $order = new Order();
+        $order->user_id = $user->id;
+        $order->total_amount = $amount;
+        $order->product_id = $product->id;
+        $order->save();
+
+
 
         session()->put('Track', $data->trx);
         return to_route('user.deposit.confirm');

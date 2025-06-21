@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ url('') }}/assets/assets2/css/main.css">
     <link rel="stylesheet" href="{{ url('') }}/assets/assets2/css/swipper.min.css">
 
+
     <link rel="stylesheet"
           href="{{ url('') }}/assets/assets/vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css">
     <link rel="stylesheet" href="{{ url('') }}/assets/assets/vendor/swiper/swiper-bundle.min.css">
@@ -492,6 +493,27 @@
 <script src="{{ url('') }}/assets/assets2/js/js1.js"></script>
 <script src="{{ url('') }}/assets/assets2/js/js2.js"></script>
 <script src="{{ url('') }}/assets/assets2/js/js3.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.getElementById('buyNowBtn').addEventListener('click', function () {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Do you want to proceed with this purchase?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#0F0673',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, buy it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('buyForm').submit();
+            }
+        });
+    });
+</script>
 
 
 </body>

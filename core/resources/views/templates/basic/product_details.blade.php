@@ -80,7 +80,7 @@
                 <hr>
 
 
-                <form action="{{ route('user.deposit.insert') }}" method="POST">
+                <form id="buyForm" action="{{ route('user.deposit.insert') }}" method="POST">
                     @csrf
 
 
@@ -193,10 +193,15 @@
                     <div class="container">
 
 
+
                         @if($product->in_stock > 0)
-                            <button type="submit"
+                            <button type="button"
                                     style="background: linear-gradient(90deg, #0F0673 0%, #B00BD9 100%); color:#ffffff;"
-                                    class="btn btn-main btn-lg w-100 pill">
+                                    id="buyNowBtn"
+                                    class="btn btn-main btn-lg w-100 pill"
+
+                            >
+
                                 <svg class="cart me-1" width="16" height="16" viewBox="0 0 24 24" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -213,7 +218,7 @@
                             </button>
 
                         @else
-                            <button type="submit"
+                            <button type="button"
                                     style="background: linear-gradient(90deg, #0F0673 0%, #B00BD9 100%); color:#ffffff;"
                                     disabled
                                     class="btn btn-main btn-lg w-100 pill">

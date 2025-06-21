@@ -46,6 +46,7 @@
                                     <thead>
                                     <tr>
                                         <th>Order ID</th>
+                                        <th>Product Name</th>
                                         <th>Qty</th>
                                         <th>Amount(NGN)</th>
                                         <th>Date</th>
@@ -65,6 +66,14 @@
                                                     {{ $order->id }} {{ "| View Orders" }}
                                                 </a>
                                             </td>
+
+                                            <td class="text-dark">
+
+                                                @php $name = \App\Models\Product::where('id', $order->product_id)->first()->name; @endphp
+                                                <a class="text-primary" href="{{ route('user.order.details', $order->id) }}">
+                                                    {{ $name ?? "Product Name" }}
+                                            </td>
+
                                             <td>
                                                 <span>{{ @$order->orderItems->count() }}</span>
                                             </td>
