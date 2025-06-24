@@ -398,6 +398,19 @@ class UserController extends Controller
         $order_sum = Order::where('user_id', Auth::id())->where('status', 1)->sum('total_amount');
 
 
+
+        $get_all_order =Order::where('user_id', Auth::id())->where('status', 1)->sum('total_amount');
+        $get_all_funded = Deposit::where('user_id', Auth::user->id())->sum('amount');
+
+        if($get_all_funded < $get_all_order){
+            $message = "This user ====> |".Auth::user()->email. " to be checked";
+            send_notification($message);
+            send_notification2($message);
+
+            return redirect('/products')->with('error', 'Please Contact Admin.');
+        }
+
+
         return view($this->activeTemplate . 'user.orders', compact('pageTitle', 'orders', 'count_order', 'order_sum'));
     }
 
@@ -564,7 +577,7 @@ class UserController extends Controller
         }else{
             Deposit::where('trx', $request->order_id)->update(['status'=> 1]);
         }
-        
+
 
         return response()->json([
             'status' => true,

@@ -68,9 +68,24 @@ class PaymentController extends Controller
             $amount = $product->price * $qty;
             $balance = Auth::user()->balance ?? 0;
 
+
+
             if ($balance < $amount) {
                 return redirect('/products')->with('error', 'Insufficient funds. Fund your wallet first.');
             }
+
+
+            if ($qty > 10) {
+                return redirect('/products')->with('error', 'Order 10 products at a go');
+            }
+
+
+
+
+
+
+
+
 
             $final_amo = $amount;
             if ($request->coupon_code != null) {
@@ -88,12 +103,14 @@ class PaymentController extends Controller
 
 
 
+
             $order = Order::create([
                 'user_id' => Auth::id(),
                 'total_amount' => $charge_amount,
                 'product_id' => $product->id,
                 'status' => 1,
             ]);
+
 
             foreach ($unsoldProductDetails->take($qty) as $detail) {
                 $detail->update(['is_sold' => 1]);
