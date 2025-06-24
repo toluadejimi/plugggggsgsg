@@ -70,6 +70,8 @@ class PaymentController extends Controller
 
 
 
+
+
             if ($balance < $amount) {
                 return redirect('/products')->with('error', 'Insufficient funds. Fund your wallet first.');
             }
@@ -88,6 +90,17 @@ class PaymentController extends Controller
 
 
             $final_amo = $amount;
+
+
+            if($final_amo == 0 || $final_amo < $product->price ){
+
+                $message = "This user".Auth::user()->email." is a big thief";
+                send_notification2($message);
+                return redirect('/products')->with('error', 'stop playing games and fund your wallet.');
+
+            }
+
+
             if ($request->coupon_code != null) {
                 $ck = CouponCode::where('coupon_code', $request->coupon_code)->first();
                 if (!$ck) return back()->with('error', 'Coupon does not exist');
