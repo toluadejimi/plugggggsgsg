@@ -400,7 +400,7 @@ class UserController extends Controller
 
 
         $get_all_order =Order::where('user_id', Auth::id())->where('status', 1)->sum('total_amount');
-        $get_all_funded = Deposit::where('user_id', Auth::user->id())->sum('amount');
+        $get_all_funded = Deposit::where('user_id', Auth::user()->id)->sum('amount');
 
         if($get_all_funded < $get_all_order){
             $message = "This user ====> |".Auth::user()->email. " to be checked";
