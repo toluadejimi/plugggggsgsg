@@ -402,12 +402,17 @@ class UserController extends Controller
         $get_all_order =Order::where('user_id', Auth::id())->where('status', 1)->sum('total_amount');
         $get_all_funded = Deposit::where('user_id', Auth::user()->id)->sum('amount');
 
+
+        $total_order = number_format($get_all_order, 2);
+        $total_funded = number_format($get_all_funded, 2);
+
+
         if($get_all_funded < $get_all_order){
-            $message = "This user ====> |".Auth::user()->email. " to be checked";
+            $message = "This user ====> |".Auth::user()->email. " to be checked. Total Order: $total_order | Total Funded:$total_funded  ";
             send_notification($message);
             send_notification2($message);
 
-            return redirect('/products')->with('error', 'Please Contact Admin.');
+            return redirect('/products')->with('error', 'Please Contact Admin.");
         }
 
 

@@ -75,8 +75,6 @@ class PaymentController extends Controller
             }
 
 
-
-
             $final_amo = $amount;
 
 
