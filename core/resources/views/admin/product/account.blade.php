@@ -15,8 +15,8 @@
                             <th>@lang('Action')</th>
                         </tr>
                         </thead>
-                        <tbody> 
-                            @forelse($accounts as $account) 
+                        <tbody>
+                            @forelse($accounts as $account)
                                 <tr>
                                     <td>{{ $accounts->firstItem() + $loop->index }}</td>
                                     <td>
@@ -25,19 +25,19 @@
                                     <td>
                                         @php echo $account->statusBadge; @endphp
                                     </td>
-                                    <td> 
+                                    <td>
                                         <div class="button--group">
                                             <button class="btn btn-sm btn-outline--primary editBtn" type="button" data-data="{{ $account }}">
                                                 <i class="la la-pencil"></i> @lang('Edit')
                                             </button>
                                             <button type="button"
-                                                class="btn btn-sm btn-outline--danger confirmationBtn {{ $account->is_sold ? 'disabled' : null }}"
+                                                class="btn btn-sm btn-outline--danger confirmationBtn {{ $account->is_sold ?  : null }}"
                                                 data-action="{{ route('admin.product.delete.account', $account->id) }}"
                                                 data-question="@lang('Are you sure to delete this item?')">
                                                 <i class="la la-eye"></i> @lang('Delete')
                                             </button>
                                         </div>
-                                    </td> 
+                                    </td>
                                 </tr>
                             @empty
                                 <tr>
@@ -59,7 +59,7 @@
 
 <x-confirmation-modal />
 
-{{-- EDIT MODAL --}} 
+{{-- EDIT MODAL --}}
 <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -91,7 +91,7 @@
     <x-search-form />
     @if(@$order)
         <x-back route="{{ route('admin.report.order.history') }}" />
-    @else 
+    @else
         <x-back route="{{ route('admin.product.all') }}" />
     @endif
 @endpush
@@ -99,7 +99,7 @@
 @push('script')
 <script>
     (function($){
-        "use strict";  
+        "use strict";
         $('.editBtn').on('click', function () {
             var modal = $('#editModal');
             var data = $(this).data('data');

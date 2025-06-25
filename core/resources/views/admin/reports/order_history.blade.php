@@ -93,9 +93,23 @@
                                     </td>
 
                                     <td>
-                                        <a href="{{ route('admin.report.order.details', $order->id) }}" class="btn btn-sm btn-outline--primary">
-                                            <i class="las la-desktop"></i> @lang('Details')
-                                        </a>
+
+
+
+                                        <div class="button--group">
+                                            <a href="{{ route('admin.report.order.details', $order->id) }}" class="btn btn-sm btn-outline--primary">
+                                                <i class="las la-desktop"></i> @lang('Details')
+                                            </a>
+
+                                            <a href="{{ route('admin.product.delete.order', $order->id) }}" class="btn btn-sm btn-outline--primary"
+                                                  onclick="@lang('Are you sure to delete this item?')">
+                                            <i class="la la-eye"></i> @lang('Delete')
+                                            </a>
+
+                                        </div>
+
+
+
                                     </td>
                                 </tr>
                             @empty

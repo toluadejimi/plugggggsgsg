@@ -80,6 +80,7 @@ Route::middleware('admin')->group(function () {
         Route::get('accounts/{id}', 'accounts')->name('accounts');
         Route::get('delete/{id}', 'delete')->name('delete');
         Route::post('delete/account/{id}', 'deleteAccount')->name('delete.account');
+        Route::get('delete/order/{id}', 'deleteOrder')->name('delete.order');
         Route::post('update/account', 'updateAccount')->name('update.account');
         Route::get('/download/demo/txt', 'downloadDemoTxt')->name('download.demo.txt');
     });

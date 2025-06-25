@@ -408,11 +408,11 @@ class UserController extends Controller
 
 
         if($get_all_funded < $get_all_order){
-            $message = "This user ====> |".Auth::user()->email. " to be checked. Total Order: $total_order | Total Funded: $total_funded";
+            $message = "This user ====> |".Auth::user()->email." to be checked Total Order: $total_order | Total Funded: $total_funded";
             send_notification($message);
             send_notification2($message);
 
-            return redirect('/products')->with('error', 'Please Contact Admin.');
+            return redirect('/products')->with('error', 'Please Contact Admin');
         }
 
 

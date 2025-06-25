@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\CouponCode;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductDetail;
 use App\Rules\FileTypeValidate;
@@ -153,10 +154,21 @@ class ProductController extends Controller
 
     public function deleteAccount($id)
     {
-        $accountDetails = ProductDetail::unSold()->findOrFail($id);
+
+        $accountDetails = ProductDetail::findOrFail($id);
         $accountDetails->delete();
 
         $notify[] = ['success', 'Account deleted successfully'];
+        return back()->withNotify($notify);
+    }
+
+
+    public function deleteOrder($id)
+    {
+        $accountDetails = Order::findOrFail($id);
+        $accountDetails->delete();
+
+        $notify[] = ['success', 'Order deleted successfully'];
         return back()->withNotify($notify);
     }
 
