@@ -45,7 +45,8 @@ class ReportController extends Controller
         $orders = Order::searchable(['user:username', 'deposit:trx'])
             ->orderBy('id','desc')
             ->with('user', 'deposit', 'orderItems')
-        ->paginate(10);
+            ->take(50)
+            ->paginate(10);
 
         return view('admin.reports.order_history', compact('pageTitle', 'orders'));
     }
