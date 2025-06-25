@@ -70,21 +70,9 @@ class PaymentController extends Controller
 
 
 
-
-
             if ($balance < $amount) {
                 return redirect('/products')->with('error', 'Insufficient funds. Fund your wallet first.');
             }
-
-
-            if ($qty > 10) {
-                return redirect('/products')->with('error', 'Order 10 products at a go');
-            }
-
-
-
-
-
 
 
 
