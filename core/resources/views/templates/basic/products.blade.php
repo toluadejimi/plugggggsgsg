@@ -249,12 +249,76 @@
 
 
 
+
+
     </div>
 
 
 
+    <div id="flash-buy-box" style="position: fixed; bottom: 10px; left: 10px; right: 10px; z-index: 9999; background: rgba(5,67,159,0.8); color: white; padding: 10px; border-radius: 10px; display: none; text-align: center;">
+        <span id="flash-buy-text"></span>
+    </div>
 
 
+    <script>
+        let nextPage = "{{ $categories->nextPageUrl() }}";
+        let loading = false;
+
+        window.onscroll = function () {
+            if (loading || !nextPage) return;
+
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                loading = true;
+                document.getElementById('loading').style.display = 'block';
+
+                fetch(nextPage, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        const wrapper = document.getElementById('category-wrapper');
+                        wrapper.insertAdjacentHTML('beforeend', data.html);
+                        nextPage = data.next_page;
+                        loading = false;
+                        document.getElementById('loading').style.display = 'none';
+                    })
+                    .catch(error => {
+                        console.error('Error loading more:', error);
+                        loading = false;
+                        document.getElementById('loading').style.display = 'none';
+                    });
+            }
+        };
+    </script>
+
+    <script>
+        const messages = [
+            @foreach($bought as $purchase)
+                "User {{ Str::limit($purchase->user_name, 4, '***') }} just bought {{ Str::limit($purchase->item, 16, '...') }} for ₦{{ number_format($purchase->amount) }}",
+            @endforeach
+        ];
+
+        let index = 0;
+        const flashBox = document.getElementById('flash-buy-box');
+        const flashText = document.getElementById('flash-buy-text');
+
+        if (messages.length > 0) {
+            flashBox.style.display = 'block';
+
+            setInterval(() => {
+                flashText.innerText = messages[index];
+                flashBox.style.opacity = 1;
+
+                setTimeout(() => {
+                    flashBox.style.opacity = 0;
+                }, 4000);
+
+                index = (index + 1) % messages.length;
+            }, 5000);
+        }
+    </script>
 
 
 

@@ -33243,3 +33243,7 @@ div.dataTables_wrapper div.dt-row {
 .auth-main ~ .pct-offcanvas .pc-boxcontainer, [data-pc-layout=compact] [data-pc-layout=horizontal] .pc-rtl {
     display: none
 }
+
+#flash-buy-box {
+    transition: opacity 1s ease-in-out;
+}

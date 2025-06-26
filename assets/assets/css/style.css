@@ -22748,3 +22748,8 @@ ul.list-check li:after {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+#flash-buy-box {
+    transition: opacity 1s ease-in-out;
+}

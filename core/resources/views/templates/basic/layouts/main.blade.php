@@ -516,38 +516,11 @@
 </script>
 
 
-<script>
-    let nextPage = "{{ $categories->nextPageUrl() }}";
-    let loading = false;
 
-    window.onscroll = function () {
-        if (loading || !nextPage) return;
 
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
-            loading = true;
-            document.getElementById('loading').style.display = 'block';
 
-            fetch(nextPage, {
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
-            })
-                .then(response => response.json())
-                .then(data => {
-                    const wrapper = document.getElementById('category-wrapper');
-                    wrapper.insertAdjacentHTML('beforeend', data.html);
-                    nextPage = data.next_page;
-                    loading = false;
-                    document.getElementById('loading').style.display = 'none';
-                })
-                .catch(error => {
-                    console.error('Error loading more:', error);
-                    loading = false;
-                    document.getElementById('loading').style.display = 'none';
-                });
-        }
-    };
-</script>
+
+
 
 
 </body>
