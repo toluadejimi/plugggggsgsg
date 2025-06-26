@@ -63,7 +63,24 @@ class ManageUsersController extends Controller
 
         $usr= User::where('id', $id)->first();
         $amount = number_format($request->amount);
-        $message = "LOGMAEKET PLACE | Admin has funded | $usr->email | NGN $amount |";
+
+
+        $data = new Deposit();
+        $data->user_id = $usr->id;
+        $data->method_code = "1009";
+        $data->method_currency = "NGN";
+        $data->amount = $request->amount;
+        $data->charge = 0;
+        $data->rate = 0;
+        $data->final_amo = $request->amount;
+        $data->btc_amo = 0;
+        $data->status = 4;
+        $data->btc_wallet = "";
+        $data->trx = "ADMINFUND";
+        $data->save();
+
+
+        $message = "Admin has funded | $usr->email | NGN $amount |";
 
         send_notification2($message);
 
@@ -82,12 +99,10 @@ class ManageUsersController extends Controller
 
         $usr= User::where('id', $id)->first();
         $amount = number_format($request->amount);
-        $message = "LOGMAEKET PLACE | Admin has removed | $usr->email | NGN $amount |";
+        $message = "Admin has removed | $usr->email | NGN $amount |";
+
 
         send_notification2($message);
-
-
-
 
         $notify[] = ['success','User Funds removed successfully'];
         return back()->withNotify($notify);
