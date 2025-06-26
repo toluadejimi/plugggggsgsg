@@ -27,6 +27,48 @@
     <link rel="stylesheet"
           href="{{ url('') }}/assets/assets/vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css">
     <link rel="stylesheet" href="{{ url('') }}/assets/assets/vendor/swiper/swiper-bundle.min.css">
+
+
+    <style>
+        .mobile-footer-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 65px;
+            background: #fff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #e2e2e2;
+            box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .footer-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #444;
+            font-size: 11px;
+        }
+
+        .footer-link img {
+            width: 22px;
+            height: 22px;
+            margin-bottom: 3px;
+        }
+
+        .footer-link:active,
+        .footer-link:hover {
+            color: #007bff;
+        }
+
+    </style>
+
+
 </head>
 <body>
 
@@ -385,20 +427,6 @@
 
             <!-- Dashboard Nav Start -->
             <div class="dashboard-nav bg-white flx-between gap-md-3 gap-2">
-                <div class="dashboard-nav__left flx-align gap-md-3 gap-2">
-                    <button type="button" class="icon-btn bar-icon text-heading bg-gray-seven flx-center">
-                        <img src="{{ url('') }}/assets/assets2/images/icons/menu-bar.svg" alt="">
-                    </button>
-                    <button type="button" class="icon-btn arrow-icon text-heading bg-gray-seven flx-center">
-                        <img src="{{ url('') }}/assets/assets2/images/icons/angle-right.svg" alt="">
-                    </button>
-                    <form action="dashboard.html#" class="search-input d-sm-block d-none">
-                        <span class="icon"><img src="{{ url('') }}/assets/assets2/images/icons/search-dark.svg" alt=""></span>
-                        <input type="text" class="common-input common-input--md common-input--bg pill w-100"
-                               placeholder="Search here...">
-                    </form>
-                </div>
-
 
                 <a class="navbar-brand logo d-block d-md-none" href="{{ route('home') }}">
                     <img src="{{ getImage(getFilePath('logoIcon') . '/dark_logo.png') }}" alt="@lang('image')">
@@ -449,16 +477,44 @@
 
 
 
-            <div class="dashboard-footer bottom-footer-two mt-32 border-0 bg-white">
-                <div class="bottom-footer__inner flx-between gap-3">
-{{--                    <p class="bottom-footer__text font-10"> 2024 LoggsPlug, All rights reserved.</p>--}}
-                    {{--                    <div class="footer-links gap-4">--}}
-                    {{--                        <a href="dashboard.html#" class="footer-link hover-text-heading font-14">Terms of service</a>--}}
-                    {{--                        <a href="dashboard.html#" class="footer-link hover-text-heading font-14">Privacy Policy</a>--}}
-                    {{--                        <a href="dashboard.html#" class="footer-link hover-text-heading font-14">cookies</a>--}}
-                    {{--                    </div>--}}
-                </div>
-            </div>
+            <!-- Floating Mobile Footer -->
+            <footer class="mobile-footer-nav">
+                <a href="/" class="footer-link">
+                    <img src="{{ url('') }}/assets/assets2/images/icons/sidebar-icon1.svg" alt=""
+                         class="icon">
+                    <span>Home</span>
+                </a>
+
+                <a href="/user/deposit/new" class="footer-link">
+                    <img src="{{ url('') }}/assets/assets2/images/icons/sidebar-icon6.svg" alt=""
+                         class="icon">
+                    <span class="text">Fund Wallet</span>
+                </a>
+
+
+                <a href="/user/orders" class="footer-link">
+                    <img src="{{ url('') }}/assets/assets2/images/icons/sidebar-icon12.svg" alt=""
+                         class="icon">
+                    <span>Orders</span>
+                </a>
+
+
+                <a href="/contact" class="footer-link">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.2417 11.605C18.0947 11.4377 18.0137 11.2227 18.0137 11C18.0137 10.7773 18.0947 10.5623 18.2417 10.395L19.415 9.07501C19.5443 8.93079 19.6246 8.74932 19.6443 8.55664C19.6641 8.36396 19.6223 8.16997 19.525 8.00251L17.6917 4.83084C17.5953 4.66357 17.4486 4.53098 17.2725 4.45197C17.0964 4.37296 16.8998 4.35157 16.7108 4.39084L14.9875 4.73917C14.7682 4.78448 14.5399 4.74796 14.3457 4.63651C14.1515 4.52505 14.0048 4.34637 13.9333 4.13417L13.3742 2.45667C13.3127 2.2746 13.1955 2.11647 13.0392 2.00461C12.883 1.89276 12.6955 1.83284 12.5033 1.83334H8.83667C8.63678 1.82291 8.43896 1.87819 8.27344 1.99074C8.10792 2.1033 7.98379 2.26694 7.92001 2.45667L7.40667 4.13417C7.33517 4.34637 7.18848 4.52505 6.99428 4.63651C6.80007 4.74796 6.57179 4.78448 6.35251 4.73917L4.58334 4.39084C4.40418 4.36552 4.22153 4.39379 4.05841 4.47209C3.89529 4.55039 3.75898 4.67521 3.66667 4.83084L1.83334 8.00251C1.73357 8.1681 1.68871 8.361 1.70517 8.55363C1.72164 8.74625 1.79858 8.92874 1.92501 9.07501L3.08917 10.395C3.23613 10.5623 3.31718 10.7773 3.31718 11C3.31718 11.2227 3.23613 11.4377 3.08917 11.605L1.92501 12.925C1.79858 13.0713 1.72164 13.2538 1.70517 13.4464C1.68871 13.639 1.73357 13.8319 1.83334 13.9975L3.66667 17.1692C3.76301 17.3364 3.9097 17.469 4.08582 17.548C4.26194 17.6271 4.45851 17.6484 4.64751 17.6092L6.37084 17.2608C6.59012 17.2155 6.81841 17.252 7.01261 17.3635C7.20681 17.475 7.35351 17.6536 7.42501 17.8658L7.98417 19.5433C8.04795 19.7331 8.17209 19.8967 8.33761 20.0093C8.50313 20.1218 8.70095 20.1771 8.90084 20.1667H12.5675C12.7597 20.1672 12.9471 20.1073 13.1034 19.9954C13.2597 19.8835 13.3768 19.7254 13.4383 19.5433L13.9975 17.8658C14.069 17.6536 14.2157 17.475 14.4099 17.3635C14.6041 17.252 14.8324 17.2155 15.0517 17.2608L16.775 17.6092C16.964 17.6484 17.1606 17.6271 17.3367 17.548C17.5128 17.469 17.6595 17.3364 17.7558 17.1692L19.5892 13.9975C19.6865 13.83 19.7283 13.6361 19.7085 13.4434C19.6888 13.2507 19.6085 13.0692 19.4792 12.925L18.2417 11.605ZM16.8758 12.8333L17.6092 13.6583L16.4358 15.6933L15.3542 15.4733C14.694 15.3384 14.0072 15.4505 13.4242 15.7885C12.8412 16.1264 12.4026 16.6667 12.1917 17.3067L11.8433 18.3333H9.49667L9.16667 17.2883C8.95571 16.6484 8.51711 16.1081 7.93413 15.7702C7.35115 15.4322 6.66438 15.3201 6.00417 15.455L4.92251 15.675L3.73084 13.6492L4.46417 12.8242C4.91513 12.32 5.16444 11.6673 5.16444 10.9908C5.16444 10.3144 4.91513 9.66169 4.46417 9.15751L3.73084 8.33251L4.90417 6.31584L5.98584 6.53584C6.64604 6.67079 7.33282 6.55865 7.91579 6.22069C8.49877 5.88273 8.93737 5.34248 9.14834 4.70251L9.49667 3.66667H11.8433L12.1917 4.71167C12.4026 5.35165 12.8412 5.8919 13.4242 6.22985C14.0072 6.56781 14.694 6.67996 15.3542 6.54501L16.4358 6.32501L17.6092 8.36001L16.8758 9.18501C16.4299 9.68804 16.1837 10.337 16.1837 11.0092C16.1837 11.6814 16.4299 12.3303 16.8758 12.8333ZM10.67 7.33334C9.94481 7.33334 9.2359 7.54839 8.63292 7.95128C8.02993 8.35418 7.55997 8.92684 7.28245 9.59683C7.00493 10.2668 6.93231 11.0041 7.07379 11.7153C7.21527 12.4266 7.56449 13.0799 8.07728 13.5927C8.59007 14.1055 9.24341 14.4547 9.95468 14.5962C10.6659 14.7377 11.4032 14.6651 12.0732 14.3876C12.7432 14.11 13.3158 13.6401 13.7187 13.0371C14.1216 12.4341 14.3367 11.7252 14.3367 11C14.3367 10.0275 13.9504 9.09491 13.2627 8.40728C12.5751 7.71965 11.6425 7.33334 10.67 7.33334ZM10.67 12.8333C10.3074 12.8333 9.95295 12.7258 9.65146 12.5244C9.34997 12.3229 9.11499 12.0366 8.97623 11.7016C8.83747 11.3666 8.80116 10.998 8.8719 10.6423C8.94264 10.2867 9.11725 9.96004 9.37364 9.70364C9.63004 9.44725 9.95671 9.27264 10.3123 9.2019C10.668 9.13116 11.0366 9.16747 11.3716 9.30623C11.7066 9.44499 11.9929 9.67997 12.1944 9.98146C12.3958 10.283 12.5033 10.6374 12.5033 11C12.5033 11.4862 12.3102 11.9526 11.9664 12.2964C11.6226 12.6402 11.1562 12.8333 10.67 12.8333Z" fill="#444444"/>
+                    </svg>
+
+                    <span class="text">Profile</span>
+                </a>
+
+
+
+
+            </footer>
+
+
+
+
             <!-- ====================== Dashboard Footer End ======================== -->
         </div>
     </div>
@@ -522,6 +578,28 @@
     });
 </script>
 
+
+<script>
+    let lastScroll = 0;
+    const footer = document.querySelector('.mobile-footer-nav');
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+            footer.style.transform = 'translateY(0)';
+            return;
+        }
+
+        if (currentScroll > lastScroll) {
+            // Scrolling down
+            footer.style.transform = 'translateY(100%)';
+        } else {
+            // Scrolling up
+            footer.style.transform = 'translateY(0)';
+        }
+        lastScroll = currentScroll;
+    });
+</script>
 
 
 
