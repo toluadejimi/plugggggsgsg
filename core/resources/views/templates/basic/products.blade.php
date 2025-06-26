@@ -296,7 +296,7 @@
     <script>
         const messages = [
             @foreach($bought as $purchase)
-                "User {{ Str::limit($purchase->user_name, 4, '***') }} just bought {{ Str::limit($purchase->item, 16, '...') }} for ₦{{ number_format($purchase->amount) }}",
+                "{{ Str::limit($purchase->user_name, 4, '***') }} just bought {{ Str::limit($purchase->item, 16, '...') }} for ₦{{ number_format($purchase->amount) }}",
             @endforeach
         ];
 
