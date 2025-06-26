@@ -13,7 +13,7 @@
                     <div class="col-8" >
                         <p class="mb-1">@php $text = $product->name.' | '.strLimit(strip_tags($product->description), 20); @endphp
                             <a class="text-small text-dark" href="{{ route('product.details', $product->id) }}"
-                               style="font-size: 12px;"
+                               style="font-size: 14px;"
                                class="text-dark font-size">
                                 @php echo $text; @endphp
                             </a>
