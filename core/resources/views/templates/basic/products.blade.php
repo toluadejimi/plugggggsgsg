@@ -269,9 +269,9 @@
 
 
 
-    <div id="flash-buy-box" style="position: fixed; bottom: 10px; left: 10px; right: 10px; z-index: 9999; background: rgba(5,67,159,0.8); color: white; padding: 10px; border-radius: 10px; display: none; text-align: center;">
-        <span id="flash-buy-text"></span>
-    </div>
+{{--    <div id="flash-buy-box" style="position: fixed; bottom: 10px; left: 10px; right: 10px; z-index: 9999; background: rgba(5,67,159,0.8); color: white; padding: 10px; border-radius: 10px; display: none; text-align: center;">--}}
+{{--        <span id="flash-buy-text"></span>--}}
+{{--    </div>--}}
 
 
     <script>
