@@ -10,20 +10,25 @@
                     </div>
 
 
-                    <div class="col-5"
-                         style="font-size: 10px;">  @php $text = $product->name.' | '.strLimit(strip_tags($product->description), 30); @endphp
-                        <a class="text-small text-black" href="{{ route('product.details', $product->id) }}"
-                           style="text-size-adjust: 8px;"
-                           class="text-dark font-size                                                                             ">
-                            @php echo $text; @endphp
-                        </a>
+                    <div class="col-8" >
+                        <p class="mb-1">@php $text = $product->name.' | '.strLimit(strip_tags($product->description), 20); @endphp
+                            <a class="text-small text-dark" href="{{ route('product.details', $product->id) }}"
+                               style="font-size: 12px;"
+                               class="text-dark font-size">
+                                @php echo $text; @endphp
+                            </a>
+                        </p>
+
+
+                        <p class="mb-0 text-muted"><a class="text-white btn btn-dark btn-rounded btn-sm"
+                                                      style="font-size: 12px; font-weight: bolder"> {{ $general->cur_sym }}{{ showAmount($product->price) }} </a>
+                            | <a class="text-white btn btn-dark btn-rounded btn-sm"
+                                 style="font-size: 12px; font-weight: bolder"> {{ $product->in_stock }} pcs </a></p>
 
                     </div>
 
-                    <div class="col-3">
-                        <a class="text-black"
-                           style="font-size: 10px;"> {{ $general->cur_sym }}{{ showAmount($product->price) }} </a>
-                    </div>
+
+
 
                     <div class="col-2">
 
@@ -38,11 +43,6 @@
 
 
                                 <div class="d-flex justify-content-center row">
-
-                                    <div class="col-12">
-                                        <span class="text-small col-sm-12 badge bg-dark mb-1">{{ $product->in_stock }} pcs</span>
-
-                                    </div>
 
                                     <div class="col-12 d-flex justify-content-center">
                                         <a href="/product/details/{{ $product->id }}"
@@ -63,10 +63,6 @@
 
                                 <div class="d-flex justify-content-center row">
 
-                                    <div class="col-12">
-                                        <span class="text-small col-sm-12 badge bg-dark mb-1">{{ $product->in_stock }} pcs</span>
-
-                                    </div>
 
                                     <div class="col-12 d-flex justify-content-center">
                                         <a href="/user/login"

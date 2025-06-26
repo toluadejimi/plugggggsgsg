@@ -200,28 +200,46 @@ class SiteController extends Controller
 
 
         $request = request();
+
         $request->validate([
-            'search'=>'nullable|regex:/^[\w-]*$/'
+            'search' => 'nullable|regex:/^[\w-]*$/'
         ]);
 
-        $categories = Category::active()
-        ->whereHas('products', function($products){
-            return $products->active()->searchable(['name', 'description', 'category:name']);
-        })
-        ->with(['products'=>function($products){
-            return $products->active()->orderBy('id', 'DESC');
-        }, 'products.productDetails']);
+        $query = Category::where('status', 1)->with([
+            'products' => function ($products) {
+                return $products->active()->orderBy('id', 'DESC');
+            },
+            'products.productDetails'
+        ]);
+
+        $categories = $query->orderBy('name')->paginate(10);
+
+        if ($request->ajax()) {
+            $activeTemplate = $this->activeTemplate;
+
+            return response()->json([
+                'html' => view($activeTemplate . 'partials.category_loop', [
+                    'categories' => $categories,
+                    'activeTemplate' => $activeTemplate,
+                ])->render(),
+                'next_page' => $categories->nextPageUrl(),
+            ]);
+        }
 
 
-        $pageTitle = 'Products ';
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view($activeTemplate . 'partials.category_loop', compact('categories'))->render(),
+                'next_page' => $categories->nextPageUrl(),
+            ]);
+
+        }
+        $pageTitle = 'Products';
 
         $get_wallet = Auth::user()->wallet ?? null;
-        if($get_wallet == null){
-            $wallet = null;
-        }else{
-            $wallet = Auth::user()->wallet;
-        }
-        $categories = $categories->orderBy('name')->paginate(getPaginate());
+        $wallet = $get_wallet ?? null;
+
+
 
 
         $hour = now()->hour;
