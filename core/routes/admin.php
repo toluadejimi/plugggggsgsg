@@ -160,6 +160,7 @@ Route::middleware('admin')->group(function () {
     // Report
     Route::controller('ReportController')->prefix('report')->name('report.')->group(function(){
         Route::get('order/history', 'orderHistory')->name('order.history');
+        Route::get('order/find', 'orderHistoryFind')->name('order.find');
         Route::get('order/details/{id}', 'orderDetails')->name('order.details');
         Route::get('login/history', 'loginHistory')->name('login.history');
         Route::get('login/ipHistory/{ip}', 'loginIpHistory')->name('login.ipHistory');

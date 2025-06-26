@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\NotificationLog;
 use App\Models\Order;
+use App\Models\User;
 use App\Models\UserLogin;
 use Illuminate\Http\Request;
 use App\Constants\Status;
@@ -40,13 +41,33 @@ class ReportController extends Controller
     }
 
     public function orderHistory(Request $request){
+
+
         $pageTitle = 'Order History';
 
-        $orders = Order::searchable(['user:username', 'deposit:trx'])
+        $orders = Order::latest()->take(50)->searchable(['user:username', 'deposit:trx'])
             ->orderBy('id','desc')
             ->with('user', 'deposit', 'orderItems')
-            ->take(50)
-            ->paginate(10);
+            ->paginate(50);
+
+        return view('admin.reports.order_history', compact('pageTitle', 'orders'));
+    }
+
+    public function orderHistoryFind(Request $request){
+
+        $pageTitle = 'Order History';
+
+        $get_user = User::where('email', $request->email)->first() ?? null;
+
+        if(!$get_user){
+            $notify[] = ['error', 'User not found'];
+            return back()->withNotify($notify);
+        }
+
+        $orders = Order::latest()->where('user_id', $get_user->id)
+            ->orderBy('id','desc')
+            ->with('user', 'deposit', 'orderItems')
+            ->paginate(50);
 
         return view('admin.reports.order_history', compact('pageTitle', 'orders'));
     }

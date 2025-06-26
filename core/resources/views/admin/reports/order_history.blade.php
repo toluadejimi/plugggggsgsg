@@ -9,11 +9,12 @@
         </div>
         <div class="card responsive-filter-card mb-4">
             <div class="card-body">
-                <form action="">
+                <form action="find" method="get">
+                    @csrf
                     <div class="d-flex flex-wrap gap-4">
                         <div class="flex-grow-1">
-                            <label>@lang('TRX/Username')</label>
-                            <input type="text" name="search" value="{{ request()->search }}" class="form-control">
+                            <label>@lang('Email')</label>
+                            <input type="email" name="email" value=" {{request()->email}} " class="form-control">
                         </div>
                         <div class="flex-grow-1">
                             <label>@lang('Status')</label>
@@ -59,7 +60,7 @@
                                 @endphp
                                 <tr>
                                     <td>
-                                        <span class="fw-bold">{{ $order->user->fullname }}</span>
+                                        <span class="fw-bold">{{ $order->user->email }}</span>
                                         <br>
                                         <span class="small"> <a href="{{ appendQuery('search',$order->user->username) }}"><span>@</span>{{ $order->user->username }}</a> </span>
                                     </td>
