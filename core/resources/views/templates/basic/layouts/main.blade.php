@@ -477,6 +477,7 @@
 
 
 
+
             <!-- Floating Mobile Footer -->
             <footer class="mobile-footer-nav">
                 <a href="/" class="footer-link">
