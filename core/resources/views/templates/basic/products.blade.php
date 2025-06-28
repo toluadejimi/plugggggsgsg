@@ -141,7 +141,7 @@
                 <div class="col-xl-3 col-sm-12 d-flex justify-content-end">
                     <select id="urlSelect" onchange="redirectToUrl()" class="btn btn-sm btn-dark">
                         <option value="">Categories</option>
-                        @foreach($categories as $data)
+                        @foreach($categoriesdrop as $data)
                             <option value="{{url('')}}/category-products/{{$data->name}}/{{$data->id}}">{{$data->name}}
                             </option>
                         @endforeach

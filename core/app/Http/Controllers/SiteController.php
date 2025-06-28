@@ -213,6 +213,7 @@ class SiteController extends Controller
         ]);
 
         $categories = $query->orderBy('name')->paginate(10);
+        $categoriesdrop = Category::where('status', 1)->orderBy('name')->get();
 
         if ($request->ajax()) {
             $activeTemplate = $this->activeTemplate;
@@ -265,7 +266,7 @@ class SiteController extends Controller
 
 
 
-        return view($this->activeTemplate . 'products', compact('pageTitle', 'bought_qty','bought', 'gateway_currency', 'greetings', 'categories','sections', 'wallet'));
+        return view($this->activeTemplate . 'products', compact('pageTitle', 'categoriesdrop', 'bought_qty','bought', 'gateway_currency', 'greetings', 'categories','sections', 'wallet'));
     }
 
 
