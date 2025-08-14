@@ -37,6 +37,7 @@
                                 <h6>Enter Amount (NGN)</h6>
                                 <input type="number" name="amount" class="form-control" required>
                                 <input type="text" hidden value="enkpay" name="payment">
+                                <span>Minimum amount to fund NGN 2,000</span>
                             </div>
 
                         </div>
