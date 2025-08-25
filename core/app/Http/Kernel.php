@@ -21,6 +21,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \App\Http\Middleware\LogExcessiveRequests::class,
     ];
 
     /**
@@ -73,5 +74,6 @@ class Kernel extends HttpKernel
         'demo' => \App\Http\Middleware\Demo::class,
         'registration.complete' => \App\Http\Middleware\RegistrationStep::class,
         'maintenance' => \App\Http\Middleware\MaintenanceMode::class,
+        'log.requests' => \App\Http\Middleware\LogExcessiveRequests::class,
     ];
 }

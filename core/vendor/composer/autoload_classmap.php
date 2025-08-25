@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\ExportMySQLData' => $baseDir . '/app/Console/Commands/ExportMySQLData.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Constants\\FileInfo' => $baseDir . '/app/Constants/FileInfo.php',
     'App\\Constants\\Status' => $baseDir . '/app/Constants/Status.php',
@@ -123,6 +124,7 @@ return array(
     'App\\Http\\Middleware\\Demo' => $baseDir . '/app/Http/Middleware/Demo.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\LanguageMiddleware' => $baseDir . '/app/Http/Middleware/LanguageMiddleware.php',
+    'App\\Http\\Middleware\\LogExcessiveRequests' => $baseDir . '/app/Http/Middleware/LogExcessiveRequests.php',
     'App\\Http\\Middleware\\MaintenanceMode' => $baseDir . '/app/Http/Middleware/MaintenanceMode.php',
     'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => $baseDir . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
     'App\\Http\\Middleware\\RedirectIfAdmin' => $baseDir . '/app/Http/Middleware/RedirectIfAdmin.php',
@@ -142,6 +144,7 @@ return array(
     'App\\Models\\Admin' => $baseDir . '/app/Models/Admin.php',
     'App\\Models\\AdminNotification' => $baseDir . '/app/Models/AdminNotification.php',
     'App\\Models\\AdminPasswordReset' => $baseDir . '/app/Models/AdminPasswordReset.php',
+    'App\\Models\\Bought' => $baseDir . '/app/Models/Bought.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\CouponCode' => $baseDir . '/app/Models/CouponCode.php',
     'App\\Models\\Deposit' => $baseDir . '/app/Models/Deposit.php',
@@ -5173,6 +5176,12 @@ return array(
     'Ramsey\\Uuid\\UuidInterface' => $vendorDir . '/ramsey/uuid/src/UuidInterface.php',
     'Ramsey\\Uuid\\Validator\\GenericValidator' => $vendorDir . '/ramsey/uuid/src/Validator/GenericValidator.php',
     'Ramsey\\Uuid\\Validator\\ValidatorInterface' => $vendorDir . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+    'Rap2hpoutre\\LaravelLogViewer\\BaseController' => $vendorDir . '/rap2hpoutre/laravel-log-viewer/src/controllers/LogViewerController.php',
+    'Rap2hpoutre\\LaravelLogViewer\\LaravelLogViewer' => $vendorDir . '/rap2hpoutre/laravel-log-viewer/src/Rap2hpoutre/LaravelLogViewer/LaravelLogViewer.php',
+    'Rap2hpoutre\\LaravelLogViewer\\LaravelLogViewerServiceProvider' => $vendorDir . '/rap2hpoutre/laravel-log-viewer/src/Rap2hpoutre/LaravelLogViewer/LaravelLogViewerServiceProvider.php',
+    'Rap2hpoutre\\LaravelLogViewer\\Level' => $vendorDir . '/rap2hpoutre/laravel-log-viewer/src/Rap2hpoutre/LaravelLogViewer/Level.php',
+    'Rap2hpoutre\\LaravelLogViewer\\LogViewerController' => $vendorDir . '/rap2hpoutre/laravel-log-viewer/src/controllers/LogViewerController.php',
+    'Rap2hpoutre\\LaravelLogViewer\\Pattern' => $vendorDir . '/rap2hpoutre/laravel-log-viewer/src/Rap2hpoutre/LaravelLogViewer/Pattern.php',
     'Razorpay\\Api\\Account' => $vendorDir . '/razorpay/razorpay/src/Account.php',
     'Razorpay\\Api\\Addon' => $vendorDir . '/razorpay/razorpay/src/Addon.php',
     'Razorpay\\Api\\Api' => $vendorDir . '/razorpay/razorpay/src/Api.php',

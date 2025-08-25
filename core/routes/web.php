@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProxyController;
 use Illuminate\Support\Facades\Route;
+use Rap2hpoutre\LaravelLogViewer\LogViewerController;
 
 Route::get('/clear', function(){
     \Illuminate\Support\Facades\Artisan::call('optimize:clear');
@@ -12,6 +13,7 @@ Route::get('/proxy', [ProxyController::class, 'proxy']);
 
 Route::get('verify', 'Gateway\Enkpay\ProcessController@ipn')->name('enkpay');
 
+Route::get('logs', [LogViewerController::class, 'index']);
 
 
 
@@ -56,5 +58,5 @@ Route::controller('SiteController')->group(function () {
 
 
     Route::get('/{slug}', 'pages')->name('pages');
-    Route::get('/', 'index')->name('home');
+    Route::get('/', 'index')->name('home')->middleware('log.requests');
 });
