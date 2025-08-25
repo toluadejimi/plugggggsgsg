@@ -13,7 +13,7 @@ class LogExcessiveRequests
     {
         $ip = $request->ip();
         $key = "req_count_{$ip}";
-        $limit = 30;   // max requests
+        $limit = 50;   // max requests
         $minutes = 1;  // time window
         $blockKey = "blocked_{$ip}";
 
