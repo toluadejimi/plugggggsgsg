@@ -280,7 +280,7 @@ class UserController extends Controller
     {
         $pageTitle = 'Fund Wallet';
         $gateway_currency = GatewayCurrency::where('status', 1)->get();
-        $deposits = Deposit::latest()->where('user_id', Auth::id())->with('gateway', 'order')->paginate('5');
+        $deposits = Deposit::latest()->where('user_id', Auth::id())->with('gateway', 'order')->paginate('10');
         return view($this->activeTemplate . 'user.deposit_new', compact('pageTitle', 'gateway_currency', 'deposits'));
 
     }
