@@ -41,6 +41,9 @@ Route::middleware('admin')->group(function () {
         Route::post('update-gift',  'gift_update')->name('update.gift');
         Route::get('delete-gift',  'gift_delete')->name('delete.gift');
         Route::get('shipping',  'shipping_view')->name('shipping');
+        Route::get('payment-settings',  'payment_index')->name('payment.settings');
+        Route::post('/payment-gateway/{id}/toggle', 'toggle')->name('gateway.toggle');
+
         Route::get('update-shipping',  'shipping_update')->name('update.shipping');
         Route::get('delete-shipping',  'shipping_delete')->name('shipping');
 

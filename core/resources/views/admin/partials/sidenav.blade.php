@@ -98,30 +98,30 @@
                     </div>
                 </li>
 
-                <li class="sidebar-menu-item sidebar-dropdown">
-                    <a href="javascript:void(0)" class="{{menuActive('admin.gateway*',3)}}">
-                        <i class="menu-icon las la-credit-card"></i>
-                        <span class="menu-title">@lang('Payment Gateways')</span>
-                    </a>
-                    <div class="sidebar-submenu {{menuActive('admin.gateway*',2)}} ">
-                        <ul>
+{{--                <li class="sidebar-menu-item sidebar-dropdown">--}}
+{{--                    <a href="javascript:void(0)" class="{{menuActive('admin.gateway*',3)}}">--}}
+{{--                        <i class="menu-icon las la-credit-card"></i>--}}
+{{--                        <span class="menu-title">@lang('Payment Gateways')</span>--}}
+{{--                    </a>--}}
+{{--                    <div class="sidebar-submenu {{menuActive('admin.gateway*',2)}} ">--}}
+{{--                        <ul>--}}
 
-                            <li class="sidebar-menu-item {{menuActive('admin.gateway.automatic.*')}} ">
-                                <a href="{{route('admin.gateway.automatic.index')}}" class="nav-link">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Automatic Gateways')</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item {{menuActive('admin.gateway.manual.*')}} ">
-                                <a href="{{route('admin.gateway.manual.index')}}" class="nav-link">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Manual Gateways')</span>
-                                </a>
-                            </li>
+{{--                            <li class="sidebar-menu-item {{menuActive('admin.gateway.automatic.*')}} ">--}}
+{{--                                <a href="{{route('admin.gateway.automatic.index')}}" class="nav-link">--}}
+{{--                                    <i class="menu-icon las la-dot-circle"></i>--}}
+{{--                                    <span class="menu-title">@lang('Automatic Gateways')</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="sidebar-menu-item {{menuActive('admin.gateway.manual.*')}} ">--}}
+{{--                                <a href="{{route('admin.gateway.manual.index')}}" class="nav-link">--}}
+{{--                                    <i class="menu-icon las la-dot-circle"></i>--}}
+{{--                                    <span class="menu-title">@lang('Manual Gateways')</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
 
-                        </ul>
-                    </div>
-                </li>
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.deposit*',3)}}">
@@ -262,6 +262,15 @@
 
                         </ul>
                     </div>
+                </li>
+
+
+                <li class="sidebar-menu-item ">
+                    <a href="/admin/payment-settings" class="nav-link"
+                       data-default-url="payment-settings">
+                        <i class="menu-icon las la-thumbs-up"></i>
+                        <span class="menu-title">@lang('Payment Settings') </span>
+                    </a>
                 </li>
 
 

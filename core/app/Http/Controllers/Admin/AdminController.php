@@ -8,6 +8,8 @@ use App\Lib\CurlRequest;
 use App\Models\AdminNotification;
 use App\Models\CouponCode;
 use App\Models\Deposit;
+use App\Models\Gateway;
+use App\Models\GatewayCurrency;
 use App\Models\GiftItem;
 use App\Models\GiftOrder;
 use App\Models\Order;
@@ -22,6 +24,25 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
 
+
+    public function toggle(Request $request, $id)
+    {
+        $gateway = GatewayCurrency::findOrFail($id);
+        $gateway->status = $request->status;
+        $gateway->save();
+
+        return response()->json(['status' => $gateway->status]);
+    }
+
+    public function payment_index(request $request)
+    {
+
+        $data['pageTitle'] = "Payment";
+        $data['gateway'] = GatewayCurrency::all();
+        return view('admin.payment.index', $data);
+
+
+    }
 
     public function user_delete(request $request)
     {

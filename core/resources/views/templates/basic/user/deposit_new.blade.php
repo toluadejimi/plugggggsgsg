@@ -31,48 +31,50 @@
 
                         <a style="font-weight: bolder" href="https://t.me/loggsplug/32">How to fund your wallet</a>
 
-
                         <div class="p-3">
                             <div class="card-body">
                                 <h6>Enter Amount (NGN)</h6>
                                 <input type="number" name="amount" class="form-control" required>
-                                <input type="text" hidden value="enkpay" name="payment">
                                 <span>Minimum amount to fund NGN 2,000</span>
                             </div>
-
                         </div>
 
-
+                        <!-- Gateway -->
                         <div class="p-3">
-
                             <div class="card-body">
                                 <h6 class="mb-2">Select Payment Gateway</h6>
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="col-12">
-                                        <select class="form-control select select-has-icon" name="gateway" required>
+                                        <select class="form-control" id="gateway-select" name="gateway" required>
+                                            <option value="">Choose Payment Gateway</option>
                                             @foreach ($gateway_currency as $data)
-                                                <option value="{{ $data->method_code }}">{{ $data->name }} </option>
+                                                <option value="{{ $data->method_code }}">{{ $data->name }}</option>
                                             @endforeach
                                         </select>
-
-                                        {{--                                @foreach($gateway_currency as $data)--}}
-                                        {{--                                    <div class="clearfix">--}}
-                                        {{--                                        <input type="radio" value="{{$data->method_code}}" name="gateway" required--}}
-                                        {{--                                               data-gateway="{{ $data }}" class="btn-check" id="{{$data->btn_id}}"--}}
-                                        {{--                                               checked="btnradio1">--}}
-                                        {{--                                        <label class="btn text-small tag-btn" for="{{$data->btn_id}}">--}}
-                                        {{--                                            {{$data->name}}--}}
-                                        {{--                                        </label>--}}
-                                        {{--                                    </div>--}}
-                                        {{--                                @endforeach--}}
-
                                     </div>
                                 </div>
-
-
                             </div>
-
                         </div>
+
+                        <!-- Extra fields (hidden by default) -->
+                        <div class="p-3 d-none" id="extra-fields">
+                            <div class="card-body">
+                                <h6 class="mb-2">Details Required</h6>
+
+                                @if (auth()->user()->name == null)
+                                    <div class="mb-2">
+                                        <input type="text" name="name" class="form-control" placeholder="Enter your name">
+                                    </div>
+                                @endif
+
+                                @if (auth()->user()->phone == null)
+                                    <div class="mb-2">
+                                        <input type="text" name="phone" class="form-control" placeholder="Enter your phone number">
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+
 
                         <div class="p-3">
 
@@ -83,6 +85,20 @@
                         </div>
 
 
+                        <script>
+                            document.getElementById('gateway-select').addEventListener('change', function () {
+                                let selected = this.value;
+
+                                // Show extra fields only if gateway == 251 AND user has missing info
+                                @if(auth()->user()->name == null || auth()->user()->phone == null)
+                                if (selected == 251) {
+                                    document.getElementById('extra-fields').classList.remove('d-none');
+                                } else {
+                                    document.getElementById('extra-fields').classList.add('d-none');
+                                }
+                                @endif
+                            });
+                        </script>
 
 
                     </form>
@@ -118,9 +134,10 @@
                                             @if($deposit->method_code == 1000)
                                                 <p class="mb-0 text-small">Manual</p>
                                             @elseif($deposit->method_code == 250)
-                                                <p class="mb-0">Instant</p>
+                                                <p class="mb-0">SprintPay</p>
+                                            @elseif($deposit->method_code == 251)
+                                                <p class="mb-0">Payment Point</p>
                                             @else
-                                                <p class="mb-0">Referral</p>
                                             @endif
 
 
@@ -145,7 +162,7 @@
                                                            class="btn btn-warning btn-sm">Pending</a>
                                                     @endif
                                                 </a>
-                                            @elseif($deposit->method_code == 250)
+                                            @elseif($deposit->method_code == 250 || $deposit->method_code == 251)
                                                 <div class="item-footer">
                                                     <a href="javascript:void(0);" class="item-bookmark">
                                                         @if($deposit->status == 1)

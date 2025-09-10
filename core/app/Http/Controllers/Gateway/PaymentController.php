@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Gateway;
 
 use App\Models\Bought;
+use App\Models\PaymentPoint;
 use App\Models\Referre;
 use App\Models\User;
 use App\Models\Order;
@@ -24,7 +25,16 @@ class PaymentController extends Controller
     public function depositInsert(Request $request)
     {
 
-        if($request->payment == "wallet"){
+        $get_payment = GatewayCurrency::where('method_code', $request->gateway)->first();
+        if($get_payment){
+            $payment = $get_payment->payment;
+        }else{
+            $payment = $request->payment;
+
+        }
+
+
+        if($payment == "wallet"){
 
             $last_order = Order::latest()->where('user_id', Auth::id())->first()->created_at ?? null;
 
@@ -153,7 +163,7 @@ class PaymentController extends Controller
 
 
 
-        if($request->payment == "enkpay"){
+        if($payment == "enkpay"){
 
 
         if($request->amount < 1000) {
@@ -181,6 +191,139 @@ class PaymentController extends Controller
             $data->btc_wallet = "";
             $data->trx = getTrx();
             $data->save();
+
+
+            session()->put('Track', $data->trx);
+            return to_route('user.deposit.confirm');
+
+        }
+
+
+        if($payment == "point"){
+
+
+            return back()->with('error','Payment on maintenance, please check back later');
+
+
+
+            if($request->name != null){
+                User::where('id', Auth::id())->update(['name' => $request->name, 'phone' => $request->phone]);
+
+            }
+
+
+
+        if($request->amount < 1000) {
+            $notify = "Amount can not be less than 1000";
+            return back()->with('error',$notify);
+        }
+
+
+        if($request->amount > 5000000) {
+            $notify = "Amount can not be more than 100,000";
+            return back()->with('error',$notify);
+        }
+
+
+
+            if(Auth::user()->name == null || Auth::user()->phone == null){
+                return back()->with('error','Update your phone and name');
+            }
+
+
+
+            $data = new Deposit();
+            $data->user_id = Auth::id();
+            $data->method_code = $request->gateway;
+            $data->method_currency = "NGN";
+            $data->amount = $request->amount;
+            $data->charge = 0;
+            $data->rate = 0;
+            $data->final_amo = $request->amount;
+            $data->btc_amo = 0;
+            $data->btc_wallet = "";
+            $data->trx = getTrx();
+            $data->save();
+
+
+
+            $email = Auth::user()->email;
+            $get_account = PaymentPoint::where('email', $email)->first() ?? null;
+
+
+            if ($get_account != null) {
+                $data['account_no'] = $get_account->account_no;
+                $data['bank_name'] = $get_account->bank_name;
+                $data['account_name'] = $get_account->account_name;
+                return $data;
+            }
+
+            $key = env('PALMPAYKEY');
+            $databody = array(
+                "email" => $email,
+                "name" => $request->name ?? Auth::user()->name,
+                "phoneNumber" => $request->phone ?? Auth::user()->phone,
+                "bankCode" => [20946],
+                "businessId" => "9b9897b2f0cb974b9bcc740232d738eba3ccfcfb"
+            );
+
+            $post_data = json_encode($databody);
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://api.paymentpoint.co/api/v1/createVirtualAccount',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 20,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => $post_data,
+                CURLOPT_HTTPHEADER => array(
+                    "api-key: $key",
+                    'Content-Type: application/json',
+                    "Authorization: Bearer $key"
+                ),
+            ));
+
+            $var = curl_exec($curl);
+            curl_close($curl);
+            $var = json_decode($var);
+            $status = $var->status ?? null;
+
+            dd($var, $key);
+
+
+            if ($status != "fail") {
+
+
+                $not_in_use = PalmpayAccount::where('in_use', 0)->inRandomOrder()->first() ?? null;
+                if ($not_in_use != null) {
+                    $data['account_no'] = $not_in_use->account_no;
+                    $data['bank_name'] = $not_in_use->bank_name;
+                    $data['account_name'] = $not_in_use->account_name;
+                    return $data;
+                }
+
+
+                //            $pay = new PalmpayAccount();
+                //            $pay->account_no = $var->bankAccounts[0]->accountNumber;
+                //            $pay->account_name = $var->bankAccounts[0]->accountName;
+                //            $pay->bank_name = $var->bankAccounts[0]->bankName;
+                //            $pay->reserved_account_id = $var->bankAccounts[0]->Reserved_Account_Id;
+                //            $pay->bank_code = $var->bankAccounts[0]->bankCode;
+                //            $pay->email = $email;
+                //            $pay->save();
+
+
+                $data['account_no'] = $var->bankAccounts[0]->accountNumber;
+                $data['bank_name'] = $var->bankAccounts[0]->bankName;
+                $data['account_name'] = $var->bankAccounts[0]->accountName;
+                return $data;
+            }
+
+
 
 
             session()->put('Track', $data->trx);
