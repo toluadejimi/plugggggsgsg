@@ -25,16 +25,8 @@ class PaymentController extends Controller
     public function depositInsert(Request $request)
     {
 
-        $get_payment = GatewayCurrency::where('method_code', $request->gateway)->first();
-        if ($get_payment) {
-            $payment = $get_payment->payment;
-        } else {
-            $payment = $request->payment;
 
-        }
-
-
-        if ($payment == "wallet") {
+        if ($request->payment == "wallet") {
 
             $last_order = Order::latest()->where('user_id', Auth::id())->first()->created_at ?? null;
 
@@ -155,6 +147,16 @@ class PaymentController extends Controller
 
 
         }
+
+
+        $get_payment = GatewayCurrency::where('method_code', $request->gateway)->first();
+        if ($get_payment) {
+            $payment = $get_payment->payment;
+        } else {
+            $payment = $request->payment;
+        }
+
+
 
 
         if ($payment == "enkpay") {
