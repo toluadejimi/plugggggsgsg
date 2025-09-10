@@ -200,11 +200,6 @@ class PaymentController extends Controller
 
 
 
-            if ($request->name != null) {
-                User::where('id', Auth::id())->update(['name' => $request->name, 'phone' => $request->phone]);
-            }
-
-
             if ($request->amount < 1000) {
                 $notify = "Amount can not be less than 1000";
                 return back()->with('error', $notify);
@@ -214,6 +209,19 @@ class PaymentController extends Controller
             if ($request->amount > 5000000) {
                 $notify = "Amount can not be more than 100,000";
                 return back()->with('error', $notify);
+            }
+
+
+
+
+            if (Auth::user()->name == null &&  Auth::user()->phone = null) {
+
+                $request->validate([
+                    'name' => 'required',
+                    'phone' => 'required|max:11|min:11',
+                ]);
+
+                User::where('id', Auth::id())->update(['name' => $request->name, 'phone' => $request->phone]);
             }
 
 
