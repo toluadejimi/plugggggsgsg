@@ -290,7 +290,7 @@ class PaymentController extends Controller
             curl_close($curl);
             $var = json_decode($var);
             $status = $var->status ?? null;
-            $error = json_encode($var) ?? null;
+            $error = $var->message ?? null;
 
 
             if ($status != "fail") {
