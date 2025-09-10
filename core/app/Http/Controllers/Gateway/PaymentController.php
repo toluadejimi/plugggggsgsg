@@ -26,19 +26,19 @@ class PaymentController extends Controller
     {
 
         $get_payment = GatewayCurrency::where('method_code', $request->gateway)->first();
-        if($get_payment){
+        if ($get_payment) {
             $payment = $get_payment->payment;
-        }else{
+        } else {
             $payment = $request->payment;
 
         }
 
 
-        if($payment == "wallet"){
+        if ($payment == "wallet") {
 
             $last_order = Order::latest()->where('user_id', Auth::id())->first()->created_at ?? null;
 
-            if($last_order != null){
+            if ($last_order != null) {
 
                 $createdAt = strtotime($last_order);
                 $currentTime = time();
@@ -79,7 +79,6 @@ class PaymentController extends Controller
             $balance = Auth::user()->balance ?? 0;
 
 
-
             if ($balance < $amount) {
                 return redirect('/products')->with('error', 'Insufficient funds. Fund your wallet first.');
             }
@@ -88,9 +87,9 @@ class PaymentController extends Controller
             $final_amo = $amount;
 
 
-            if($final_amo == 0 || $final_amo < $product->price ){
+            if ($final_amo == 0 || $final_amo < $product->price) {
 
-                $message = "This user".Auth::user()->email." is a big thief";
+                $message = "This user" . Auth::user()->email . " is a big thief";
                 send_notification2($message);
                 return redirect('/products')->with('error', 'stop playing games and fund your wallet.');
 
@@ -109,8 +108,6 @@ class PaymentController extends Controller
             }
 
             User::where('id', Auth::id())->decrement('balance', $charge_amount);
-
-
 
 
             $order = Order::create([
@@ -157,25 +154,22 @@ class PaymentController extends Controller
             return redirect('user/orders')->with('message', 'Order Purchased Successfully');
 
 
-
-
         }
 
 
-
-        if($payment == "enkpay"){
-
-
-        if($request->amount < 1000) {
-            $notify = "Amount can not be less than 1000";
-            return back()->with('error',$notify);
-        }
+        if ($payment == "enkpay") {
 
 
-        if($request->amount > 5000000) {
-            $notify = "Amount can not be more than 100,000";
-            return back()->with('error',$notify);
-        }
+            if ($request->amount < 1000) {
+                $notify = "Amount can not be less than 1000";
+                return back()->with('error', $notify);
+            }
+
+
+            if ($request->amount > 5000000) {
+                $notify = "Amount can not be more than 100,000";
+                return back()->with('error', $notify);
+            }
 
 
             $data = new Deposit();
@@ -199,37 +193,32 @@ class PaymentController extends Controller
         }
 
 
-        if($payment == "point"){
-
-
-            return back()->with('error','Payment on maintenance, please check back later');
+        if ($payment == "point") {
 
 
 
-            if($request->name != null){
+
+            if ($request->name != null) {
                 User::where('id', Auth::id())->update(['name' => $request->name, 'phone' => $request->phone]);
 
             }
 
 
-
-        if($request->amount < 1000) {
-            $notify = "Amount can not be less than 1000";
-            return back()->with('error',$notify);
-        }
-
-
-        if($request->amount > 5000000) {
-            $notify = "Amount can not be more than 100,000";
-            return back()->with('error',$notify);
-        }
-
-
-
-            if(Auth::user()->name == null || Auth::user()->phone == null){
-                return back()->with('error','Update your phone and name');
+            if ($request->amount < 1000) {
+                $notify = "Amount can not be less than 1000";
+                return back()->with('error', $notify);
             }
 
+
+            if ($request->amount > 5000000) {
+                $notify = "Amount can not be more than 100,000";
+                return back()->with('error', $notify);
+            }
+
+
+            if (Auth::user()->name == null || Auth::user()->phone == null) {
+                return back()->with('error', 'Update your phone and name');
+            }
 
 
             $data = new Deposit();
@@ -246,19 +235,22 @@ class PaymentController extends Controller
             $data->save();
 
 
-
             $email = Auth::user()->email;
             $get_account = PaymentPoint::where('email', $email)->first() ?? null;
 
-
             if ($get_account != null) {
-                $data['account_no'] = $get_account->account_no;
-                $data['bank_name'] = $get_account->bank_name;
-                $data['account_name'] = $get_account->account_name;
-                return $data;
+                $data2['account_no'] = $get_account->account_no;
+                $data2['bank_name'] = $get_account->bank_name;
+                $data2['account_name'] = $get_account->account_name;
+
+                $data2['amount'] = $request->amount + 100;
+
+                return view('templates.basic.user.point', $data2);
+
             }
 
             $key = env('PALMPAYKEY');
+            $key_sec = env('PALSEC');
             $databody = array(
                 "email" => $email,
                 "name" => $request->name ?? Auth::user()->name,
@@ -283,7 +275,7 @@ class PaymentController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "api-key: $key",
                     'Content-Type: application/json',
-                    "Authorization: Bearer $key"
+                    "Authorization: Bearer $key_sec"
                 ),
             ));
 
@@ -292,205 +284,202 @@ class PaymentController extends Controller
             $var = json_decode($var);
             $status = $var->status ?? null;
 
-            dd($var, $key);
-
 
             if ($status != "fail") {
 
-
-                $not_in_use = PalmpayAccount::where('in_use', 0)->inRandomOrder()->first() ?? null;
-                if ($not_in_use != null) {
-                    $data['account_no'] = $not_in_use->account_no;
-                    $data['bank_name'] = $not_in_use->bank_name;
-                    $data['account_name'] = $not_in_use->account_name;
-                    return $data;
-                }
+            $pay = new PaymentPoint();
+            $pay->account_no = $var->bankAccounts[0]->accountNumber;
+            $pay->account_name = $var->bankAccounts[0]->accountName;
+            $pay->bank_name = $var->bankAccounts[0]->bankName;
+            $pay->email = $email;
+            $pay->save();
 
 
-                //            $pay = new PalmpayAccount();
-                //            $pay->account_no = $var->bankAccounts[0]->accountNumber;
-                //            $pay->account_name = $var->bankAccounts[0]->accountName;
-                //            $pay->bank_name = $var->bankAccounts[0]->bankName;
-                //            $pay->reserved_account_id = $var->bankAccounts[0]->Reserved_Account_Id;
-                //            $pay->bank_code = $var->bankAccounts[0]->bankCode;
-                //            $pay->email = $email;
-                //            $pay->save();
+            $data2['account_no'] = $var->bankAccounts[0]->accountNumber;
+            $data2['bank_name'] = $var->bankAccounts[0]->bankName;
+            $data2['account_name'] = $var->bankAccounts[0]->accountName;
 
+                $data2['amount'] = $request->amount + 100;
 
-                $data['account_no'] = $var->bankAccounts[0]->accountNumber;
-                $data['bank_name'] = $var->bankAccounts[0]->bankName;
-                $data['account_name'] = $var->bankAccounts[0]->accountName;
-                return $data;
-            }
-
-
-
-
-            session()->put('Track', $data->trx);
-            return to_route('user.deposit.confirm');
+                return view('templates.basic.user.point', $data2);
 
         }
+
+
+
+            $data['account_no'] =  "NotAvailabe";
+            $data['bank_name'] = "NotAvailabe";
+            $data['account_name'] = "Notavailabe";
+            $data['amount'] = "Notavailabe";
+
+            return view('templates.basic.user.point', $data);
+
 
 
     }
 
-    public function depositConfirm(request $request)
-    {
+
+}
+
+public
+function depositConfirm(request $request)
+{
 
 
-        $track = session()->get('Track');
-        $deposit = Deposit::where('trx', $track)->where('status',Status::PAYMENT_INITIATE)->orderBy('id', 'DESC')->with('gateway')->firstOrFail();
+    $track = session()->get('Track');
+    $deposit = Deposit::where('trx', $track)->where('status', Status::PAYMENT_INITIATE)->orderBy('id', 'DESC')->with('gateway')->firstOrFail();
 
-        if ($deposit->method_code >= 1000) {
-            return to_route('user.deposit.manual.confirm');
+    if ($deposit->method_code >= 1000) {
+        return to_route('user.deposit.manual.confirm');
+    }
+
+
+    // if($deposit->method_code == 250){
+
+    // }
+
+    $dirName = $deposit->gateway->alias;
+    $new = __NAMESPACE__ . '\\' . $dirName . '\\ProcessController';
+
+    $data = $new::process($deposit);
+    $data = json_decode($data);
+
+
+    if (isset($data->error)) {
+        $notify[] = ['error', $data->message];
+        return to_route(gatewayRedirectUrl())->withNotify($notify);
+    }
+    if (isset($data->redirect)) {
+        return redirect($data->redirect_url);
+    }
+
+    // for Stripe V3
+    if (@$data->session) {
+        $deposit->btc_wallet = $data->session->id;
+        $deposit->save();
+    }
+
+    $pageTitle = 'Payment Confirm';
+    return view($this->activeTemplate . $data->view, compact('data', 'pageTitle', 'deposit'));
+}
+
+
+public
+static function userDataUpdate($deposit, $isManual = null)
+{
+
+    if ($deposit->status == Status::PAYMENT_INITIATE || $deposit->status == Status::PAYMENT_PENDING) {
+        $deposit->status = Status::PAYMENT_SUCCESS;
+        $deposit->save();
+
+        $user = User::find($deposit->user_id);
+        $email = User::where('id', $deposit->user_id)->first()->email;
+        User::where('id', $deposit->user_id)->increment('balance', $deposit->amount);
+
+        $message = "LOGS PLUG |" . $email . "|" . number_format($deposit->amount, 2) . "| has been manually funded by Admin";
+        send_notification2($message);
+        send_notification($message);
+
+
+        if (!$isManual) {
+            $adminNotification = new AdminNotification();
+            $adminNotification->user_id = $user->id;
+            $adminNotification->title = 'Payment successful via ' . $deposit->gatewayCurrency()->name;
+            $adminNotification->click_url = urlPath('admin.deposit.successful');
+            $adminNotification->save();
         }
 
+        notify($user, $isManual ? 'DEPOSIT_APPROVE' : 'DEPOSIT_COMPLETE', [
+            'method_name' => $deposit->gatewayCurrency()->name,
+            'method_currency' => $deposit->method_currency,
+            'method_amount' => showAmount($deposit->final_amo),
+            'amount' => showAmount($deposit->amount),
+            'charge' => showAmount($deposit->charge),
+            'rate' => showAmount($deposit->rate),
+            'trx' => $deposit->trx,
+        ]);
 
-        // if($deposit->method_code == 250){
 
-        // }
+    }
+}
 
-        $dirName = $deposit->gateway->alias;
-        $new = __NAMESPACE__ . '\\' . $dirName . '\\ProcessController';
-
-        $data = $new::process($deposit);
-        $data = json_decode($data);
-
-
-        if (isset($data->error)) {
-            $notify[] = ['error', $data->message];
-            return to_route(gatewayRedirectUrl())->withNotify($notify);
-        }
-        if (isset($data->redirect)) {
-            return redirect($data->redirect_url);
-        }
-
-        // for Stripe V3
-        if(@$data->session){
-            $deposit->btc_wallet = $data->session->id;
-            $deposit->save();
-        }
+public
+function manualDepositConfirm()
+{
+    $track = session()->get('Track');
+    $data = Deposit::with('gateway')->where('status', Status::PAYMENT_INITIATE)->where('trx', $track)->first();
+    if (!$data) {
+        return to_route(gatewayRedirectUrl());
+    }
+    if ($data->method_code > 999) {
 
         $pageTitle = 'Payment Confirm';
-        return view($this->activeTemplate . $data->view, compact('data', 'pageTitle', 'deposit'));
+        $method = $data->gatewayCurrency();
+        $gateway = $method->method;
+        return view($this->activeTemplate . 'user.payment.manual', compact('data', 'pageTitle', 'method', 'gateway'));
+    }
+    abort(404);
+}
+
+public
+function manualDepositUpdate(Request $request)
+{
+    $track = session()->get('Track');
+
+    $data = Deposit::with('gateway')->where('status', Status::PAYMENT_INITIATE)->where('trx', $track)->first();
+    if (!$data) {
+        return to_route(gatewayRedirectUrl());
+    }
+    $gatewayCurrency = $data->gatewayCurrency();
+    $gateway = $gatewayCurrency->method;
+    $formData = $gateway->form->form_data;
+
+
+    if ($request->receipt == null) {
+        return back()->with('error', "Payment receipt is required");
     }
 
-
-    public static function userDataUpdate($deposit,$isManual = null)
-    {
-
-        if ($deposit->status == Status::PAYMENT_INITIATE || $deposit->status == Status::PAYMENT_PENDING) {
-            $deposit->status = Status::PAYMENT_SUCCESS;
-            $deposit->save();
-
-            $user = User::find($deposit->user_id);
-            $email = User::where('id', $deposit->user_id)->first()->email;
-            User::where('id', $deposit->user_id)->increment('balance', $deposit->amount);
-
-            $message = "LOGS PLUG |".  $email . "|". number_format($deposit->amount, 2).  "| has been manually funded by Admin";
-            send_notification2($message);
-            send_notification($message);
+    $file = $request->file('receipt');
+    $receipt_fileName = date("ymis") . $file->getClientOriginalName();
+    $directory = date("Y") . "/" . date("m") . "/" . date("d");
+    $path = getFilePath('verify') . '/' . $directory;
+    $request->receipt->move($path, $receipt_fileName);
+    $url = url('') . "/" . $path . "/" . $receipt_fileName;
 
 
-
-            if (!$isManual) {
-                $adminNotification = new AdminNotification();
-                $adminNotification->user_id = $user->id;
-                $adminNotification->title = 'Payment successful via '.$deposit->gatewayCurrency()->name;
-                $adminNotification->click_url = urlPath('admin.deposit.successful');
-                $adminNotification->save();
-            }
-
-            notify($user, $isManual ? 'DEPOSIT_APPROVE' : 'DEPOSIT_COMPLETE', [
-                'method_name' => $deposit->gatewayCurrency()->name,
-                'method_currency' => $deposit->method_currency,
-                'method_amount' => showAmount($deposit->final_amo),
-                'amount' => showAmount($deposit->amount),
-                'charge' => showAmount($deposit->charge),
-                'rate' => showAmount($deposit->rate),
-                'trx' => $deposit->trx,
-            ]);
+    Deposit::where('trx', $track)->update([
+        'status' => Status::PAYMENT_PENDING,
+        'url' => $url,
+    ]);
 
 
-        }
-    }
+    $email = User::where('id', $data->user->id)->first()->email;
 
-    public function manualDepositConfirm()
-    {
-        $track = session()->get('Track');
-        $data = Deposit::with('gateway')->where('status', Status::PAYMENT_INITIATE)->where('trx', $track)->first();
-        if (!$data) {
-            return to_route(gatewayRedirectUrl());
-        }
-        if ($data->method_code > 999) {
+    $adminNotification = new AdminNotification();
+    $adminNotification->user_id = $data->user->id;
+    $adminNotification->title = 'Payment request from ' . $data->user->username;
+    $adminNotification->click_url = $url;
+    $adminNotification->save();
 
-            $pageTitle = 'Payment Confirm';
-            $method = $data->gatewayCurrency();
-            $gateway = $method->method;
-            return view($this->activeTemplate . 'user.payment.manual', compact('data', 'pageTitle', 'method','gateway'));
-        }
-        abort(404);
-    }
-
-    public function manualDepositUpdate(Request $request)
-    {
-        $track = session()->get('Track');
-
-        $data = Deposit::with('gateway')->where('status', Status::PAYMENT_INITIATE)->where('trx', $track)->first();
-        if (!$data) {
-            return to_route(gatewayRedirectUrl());
-        }
-        $gatewayCurrency = $data->gatewayCurrency();
-        $gateway = $gatewayCurrency->method;
-        $formData = $gateway->form->form_data;
-
-
-        if ($request->receipt == null) {
-            return back()->with('error', "Payment receipt is required");
-        }
-
-        $file = $request->file('receipt');
-        $receipt_fileName = date("ymis") . $file->getClientOriginalName();
-        $directory = date("Y")."/".date("m")."/".date("d");
-        $path = getFilePath('verify').'/'.$directory;
-        $request->receipt->move($path, $receipt_fileName);
-        $url = url('')."/".$path."/".$receipt_fileName;
-
-
-        Deposit::where('trx', $track)->update([
-            'status' => Status::PAYMENT_PENDING,
-            'url' => $url,
-        ]);
-
-
-
-        $email = User::where('id', $data->user->id)->first()->email;
-
-        $adminNotification = new AdminNotification();
-        $adminNotification->user_id = $data->user->id;
-        $adminNotification->title = 'Payment request from '.$data->user->username;
-        $adminNotification->click_url = $url;
-        $adminNotification->save();
-
-        notify($data->user, 'DEPOSIT_REQUEST', [
-            'method_name' => $data->gatewayCurrency()->name,
-            'method_currency' => $data->method_currency,
-            'method_amount' => showAmount($data->final_amo),
-            'amount' => showAmount($data->amount),
-            'charge' => showAmount($data->charge),
-            'rate' => showAmount($data->rate),
-            'trx' => $data->trx
-        ]);
+    notify($data->user, 'DEPOSIT_REQUEST', [
+        'method_name' => $data->gatewayCurrency()->name,
+        'method_currency' => $data->method_currency,
+        'method_amount' => showAmount($data->final_amo),
+        'amount' => showAmount($data->amount),
+        'charge' => showAmount($data->charge),
+        'rate' => showAmount($data->rate),
+        'trx' => $data->trx
+    ]);
 
 
 //        $message = "LOGS PLUG |".  $email . "| wants to fund ". number_format($data->amount, 2).  "| check admin to confirm";
 //        send_notification2($message);
 //        send_notification($message);
 
-        $notify = "You have payment request is successful, you will be credited soon";
-        return redirect('/user/deposit/new')->with('message', $notify);
+    $notify = "You have payment request is successful, you will be credited soon";
+    return redirect('/user/deposit/new')->with('message', $notify);
 
-    }
+}
 
 
 }
