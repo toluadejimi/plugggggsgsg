@@ -335,7 +335,7 @@ class PaymentController extends Controller
             $data['account_no'] =  "NotAvailabe";
             $data['bank_name'] = "NotAvailabe";
             $data['account_name'] = "Notavailabe";
-            $data['amount'] = "Notavailabe";
+            $data['amount'] = 0;
 
             return view('templates.basic.user.point', $data);
 
