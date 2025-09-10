@@ -200,7 +200,6 @@ class PaymentController extends Controller
 
             if ($request->name != null) {
                 User::where('id', Auth::id())->update(['name' => $request->name, 'phone' => $request->phone]);
-
             }
 
 
@@ -216,9 +215,6 @@ class PaymentController extends Controller
             }
 
 
-            if (Auth::user()->name == null || Auth::user()->phone == null) {
-                return back()->with('error', 'Update your phone and name');
-            }
 
 
             $data = new Deposit();
