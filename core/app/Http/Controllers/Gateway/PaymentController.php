@@ -217,20 +217,6 @@ class PaymentController extends Controller
 
 
 
-            $data = new Deposit();
-            $data->user_id = Auth::id();
-            $data->method_code = $request->gateway;
-            $data->method_currency = "NGN";
-            $data->amount = $request->amount;
-            $data->charge = 0;
-            $data->rate = 0;
-            $data->final_amo = $request->amount;
-            $data->btc_amo = 0;
-            $data->btc_wallet = "";
-            $data->trx = getTrx();
-            $data->save();
-
-
             $email = Auth::user()->email;
             $get_account = PaymentPoint::where('email', $email)->first() ?? null;
 
@@ -240,6 +226,21 @@ class PaymentController extends Controller
                 $data2['account_name'] = $get_account->account_name;
 
                 $data2['amount'] = $request->amount + 100;
+
+
+                $data = new Deposit();
+                $data->user_id = Auth::id();
+                $data->method_code = $request->gateway;
+                $data->method_currency = "NGN";
+                $data->amount = $request->amount;
+                $data->charge = 0;
+                $data->rate = 0;
+                $data->final_amo = $request->amount;
+                $data->btc_amo = 0;
+                $data->btc_wallet = "";
+                $data->trx = getTrx();
+                $data->trx_no = $get_account->account_no;
+                $data->save();
 
                 return view('templates.basic.user.point', $data2);
 
@@ -283,12 +284,30 @@ class PaymentController extends Controller
 
             if ($status != "fail") {
 
+
+
+
             $pay = new PaymentPoint();
             $pay->account_no = $var->bankAccounts[0]->accountNumber;
             $pay->account_name = $var->bankAccounts[0]->accountName;
             $pay->bank_name = $var->bankAccounts[0]->bankName;
             $pay->email = $email;
             $pay->save();
+
+
+                $data = new Deposit();
+                $data->user_id = Auth::id();
+                $data->method_code = $request->gateway;
+                $data->method_currency = "NGN";
+                $data->amount = $request->amount;
+                $data->charge = 0;
+                $data->rate = 0;
+                $data->final_amo = $request->amount;
+                $data->btc_amo = 0;
+                $data->btc_wallet = "";
+                $data->trx = getTrx();
+                $data->trx_no = $var->bankAccounts[0]->accountNumber;
+                $data->save();
 
 
             $data2['account_no'] = $var->bankAccounts[0]->accountNumber;
