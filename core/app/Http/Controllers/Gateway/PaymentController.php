@@ -290,6 +290,7 @@ class PaymentController extends Controller
             curl_close($curl);
             $var = json_decode($var);
             $status = $var->status ?? null;
+            $error = json_encode($var) ?? null;
 
 
             if ($status != "fail") {
@@ -330,14 +331,15 @@ class PaymentController extends Controller
 
         }
 
+            return back()->with('error', "$error");
 
-
-            $data['account_no'] =  "NotAvailabe";
-            $data['bank_name'] = "NotAvailabe";
-            $data['account_name'] = "Notavailabe";
-            $data['amount'] = 0;
-
-            return view('templates.basic.user.point', $data);
+//
+//            $data['account_no'] =  "NotAvailabe";
+//            $data['bank_name'] = "NotAvailabe";
+//            $data['account_name'] = "Notavailabe";
+//            $data['amount'] = 0;
+//
+//            return view('templates.basic.user.point', $data);
 
 
 
