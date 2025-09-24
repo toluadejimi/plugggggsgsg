@@ -10,6 +10,7 @@
         "btcpayserver/btcpayserver-greenfield-php": "^2.0",
         "coingate/coingate-php": "^3.0",
         "ezyang/htmlpurifier": "^4.13",
+        "google/apiclient": "^2.0",
         "guzzlehttp/guzzle": "^7.5",
         "intervention/image": "^2.5",
         "jorenvanhocht/laravel-share": "^4.2",

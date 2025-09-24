@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Google\Client as GoogleClient;
+
 
 class ProxyController extends Controller
 {
@@ -25,6 +27,31 @@ class ProxyController extends Controller
         } catch (\Exception $e) {
             // Handle errors
             return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+
+    public function googleCallback(Request $request)
+    {
+        $client = new GoogleClient(['client_id' => env('GOOGLE_CLIENT_ID')]);
+        $payload = $client->verifyIdToken($request->credential);
+
+        if ($payload) {
+            $googleId = $payload['sub'];
+            $email = $payload['email'];
+            $name = $payload['name'];
+
+            // find or create user
+            $user = User::firstOrCreate(
+                ['email' => $email],
+                ['name' => $name, 'google_id' => $googleId]
+            );
+
+            Auth::login($user);
+
+            return redirect('/products');
+        } else {
+            return response()->json(['error' => 'Invalid token'], 401);
         }
     }
 }

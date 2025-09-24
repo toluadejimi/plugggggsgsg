@@ -162,6 +162,11 @@
       <path value="$PROJECT_DIR$/core/vendor/razorpay/razorpay" />
       <path value="$PROJECT_DIR$/core/vendor/rmccue/requests" />
       <path value="$PROJECT_DIR$/core/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/core/vendor/rap2hpoutre/laravel-log-viewer" />
+      <path value="$PROJECT_DIR$/core/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/core/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/core/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/core/vendor/google/apiclient-services" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
