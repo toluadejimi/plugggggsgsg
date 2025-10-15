@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Google\Service\ServiceControl\Auth;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Google\Client as GoogleClient;

@@ -123,7 +123,7 @@
                 </div>
             </div>
 
-         
+
         </div>
         <div class="row g-4">
             <div class="col-lg-12">
@@ -168,7 +168,7 @@
                                  @endif
 
                         </td>
-                       
+
 
 
                     </tr>
@@ -207,12 +207,12 @@
     </style>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <a href="https://t.me/acelogs_01" class="float" target="_blank">
+    <a href="https://t.me/loggsplugca" class="float" target="_blank">
         <i class="fa fa-comment my-float"></i>
     </a>
 
 
-   
+
 
 </div>
 

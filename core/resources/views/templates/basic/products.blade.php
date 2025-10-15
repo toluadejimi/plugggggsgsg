@@ -93,7 +93,7 @@
                     </div>
 
                     <div class="swiper-slide ">
-                        <a href="https://t.me/Loggsplugonline">
+                        <a href="https://t.me/loggsplugca">
                             <div class="card">
                                 <img src="{{ url('') }}/assets/assets2/images/slider/slide3.png"
                                      alt="wallet-image">
