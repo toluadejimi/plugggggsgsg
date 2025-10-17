@@ -40,20 +40,32 @@ class ReportController extends Controller
         return view('admin.reports.email_details', compact('pageTitle','email'));
     }
 
-    public function orderHistory(Request $request){
-
-
+    public function orderHistory(Request $request)
+    {
         $pageTitle = 'Order History';
 
-        dd($request->all());
+        $query = Order::query()
+            ->with(['user:id,username', 'deposit:id,order_id,trx', 'orderItems'])
+            ->orderByDesc('id');
 
-        $orders = Order::latest()->take(10)->searchable(['user:username', 'deposit:trx'])
-            ->orderBy('id','desc')
-            ->with('user', 'deposit', 'orderItems')
-            ->paginate(10);
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+
+            $query->where(function ($q) use ($search) {
+                $q->whereHas('user', function ($userQuery) use ($search) {
+                    $userQuery->where('username', 'like', "%{$search}%");
+                })
+                    ->orWhereHas('deposit', function ($depositQuery) use ($search) {
+                        $depositQuery->where('trx', 'like', "%{$search}%");
+                    });
+            });
+        }
+
+        $orders = $query->paginate(10);
 
         return view('admin.reports.order_history', compact('pageTitle', 'orders'));
     }
+
 
     public function orderHistoryFind(Request $request){
 
