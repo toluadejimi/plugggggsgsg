@@ -45,6 +45,8 @@ class ReportController extends Controller
 
         $pageTitle = 'Order History';
 
+        dd($request->all());
+
         $orders = Order::latest()->take(10)->searchable(['user:username', 'deposit:trx'])
             ->orderBy('id','desc')
             ->with('user', 'deposit', 'orderItems')
