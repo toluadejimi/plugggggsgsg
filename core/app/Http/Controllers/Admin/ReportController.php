@@ -45,10 +45,10 @@ class ReportController extends Controller
 
         $pageTitle = 'Order History';
 
-        $orders = Order::latest()->take(50)->searchable(['user:username', 'deposit:trx'])
+        $orders = Order::latest()->take(10)->searchable(['user:username', 'deposit:trx'])
             ->orderBy('id','desc')
             ->with('user', 'deposit', 'orderItems')
-            ->paginate(50);
+            ->paginate(10);
 
         return view('admin.reports.order_history', compact('pageTitle', 'orders'));
     }
