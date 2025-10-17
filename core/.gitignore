@@ -2,3 +2,5 @@
 .env.backup
 /assets
 /core/public
+core/storage/app/result.txt
+core/storage/framework/cache/data/
