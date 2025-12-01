@@ -30,6 +30,80 @@
 
 
     <style>
+
+        .telegram-float {
+            position: fixed;
+            left: 20px;              /* distance from left */
+            top: 80%;                /* vertically centered */
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #0088cc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 0 18px rgba(0, 136, 204, 0.9);
+            z-index: 9999;
+            cursor: pointer;
+            animation: tg-pulse 2s infinite ease-in-out;
+        }
+
+        /* Extra glowing ring */
+        .telegram-float::before {
+            content: "";
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 136, 204, 0.6);
+            animation: tg-glow 2s infinite ease-out;
+        }
+
+        /* Hover effect */
+        .telegram-float:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 0 25px rgb(212, 235, 246);
+        }
+
+        /* Icon alignment fix */
+        .telegram-float i {
+            position: relative;
+        }
+
+        /* Main pulse */
+        @keyframes tg-pulse {
+            0%, 100% {
+                box-shadow: 0 0 12px rgba(0, 136, 204, 0.8);
+            }
+            50% {
+                box-shadow: 0 0 26px rgba(0, 136, 204, 1);
+            }
+        }
+
+        /* Outer glowing ring animation */
+        @keyframes tg-glow {
+            0% {
+                opacity: 0.9;
+                transform: scale(0.9);
+            }
+            70% {
+                opacity: 0;
+                transform: scale(1.3);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.4);
+            }
+        }
+
+
+
+    </style>
+
+    <style>
         .mobile-footer-nav {
             position: fixed;
             bottom: 0;
@@ -641,6 +715,15 @@
 
 
 
+<a href="https://t.me/loggsplugcare0"
+   class="telegram-float"
+   target="_blank"
+   rel="noopener">
+    <i class="fab fa-telegram-plane"></i>
+</a>
+
+<!-- Font Awesome (for the Telegram icon) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
 
